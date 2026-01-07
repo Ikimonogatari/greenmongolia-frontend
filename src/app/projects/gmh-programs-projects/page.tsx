@@ -1,7 +1,6 @@
 import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
 import GalleryV2 from "@/components/gallery/GalleryV2";
 import LayoutV1 from "@/components/layouts/LayoutV1";
-import Counter from "@/components/counter/Counter";
 import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
 
 export const metadata = {
@@ -14,7 +13,6 @@ const GMHProgramsProjectsPage = () => {
             <LayoutV1>
                 <BreadCrumb title="GMH programs & projects" breadCrumb="Projects & Programmes / GMH programs & projects" />
                 <GalleryV2 />
-                <Counter />
                 <WhyChooseV1 />
             </LayoutV1>
         </>
