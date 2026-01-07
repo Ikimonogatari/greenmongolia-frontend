@@ -43,7 +43,7 @@ const HeaderCart = () => {
     }
 
     return (
-        <div className="attr-right">
+        <div className="attr-right" style={{ position: 'relative', zIndex: 10 }}>
             <div className="attr-nav">
                 <ul>
                     <li className="dropdown">
