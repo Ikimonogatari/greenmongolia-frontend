@@ -17,26 +17,33 @@ import '@/assets/css/unit-test.css';
 import '@/assets/css/shop.css';
 import '@/assets/css/style.css';
 
-import Dependency from "@/components/utilities/Dependency";
-import type { Metadata } from "next";
+import Dependency from '@/components/utilities/Dependency';
 import ReduxWrapper from '@/components/utilities/ReduxWrapper';
+import {NextIntlClientProvider} from 'next-intl';
+import {getLocale, getMessages} from 'next-intl/server';
+import type {Metadata} from 'next';
 
 export const metadata: Metadata = {
   title: "Agrica - Organic Farm Agriculture React NextJs Template"
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const messages = await getMessages();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body>
-        <ReduxWrapper>
-          <Dependency />
-          {children}
-        </ReduxWrapper>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <ReduxWrapper>
+            <Dependency />
+            {children}
+          </ReduxWrapper>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

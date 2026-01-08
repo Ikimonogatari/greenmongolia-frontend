@@ -1,0 +1,41 @@
+{
+  "Header": {
+    "about": "Бидний тухай",
+    "aboutGmh": "GMH тухай",
+    "board": "Зөвлөх зөвлөл",
+    "governance": "Засаглал",
+    "governanceMenu": "Засаглал",
+    "careers": "Ажлын байр",
+    "committees": "Хороод ба зөвлөл",
+    "policies": "Бодлого",
+    "partners": "Түншүүд",
+    "localPartners": "Дотоодын түншүүд",
+    "unPartners": "НҮБ-ын түншүүд",
+    "privatePartners": "Хувийн хэвшлийн түншүүд",
+    "donate": "Хандивлах",
+    "projects": "Төслүүд",
+    "nationalPrograms": "Үндэсний хөтөлбөрүүд",
+    "unPrograms": "НҮБ-ын хөтөлбөрүүд",
+    "gmhPrograms": "GMH хөтөлбөрүүд",
+    "initiatives": "Санаачилга",
+    "news": "Мэдээ",
+    "newsMedia": "Мэдээ мэдээлэл",
+    "events": "Эвент",
+    "resources": "Нөөц",
+    "dataResources": "Өгөгдөл ба нөөц",
+    "toolsMethods": "Хэрэгсэл ба арга",
+    "publications": "Нийтлэл",
+    "membership": "Гишүүнчлэл",
+    "categories": "Ангилал",
+    "applications": "Өргөдөл",
+    "gmhBoard": "GMH зөвлөл"
+  },
+  "Cart": {
+    "removed": "Барааг сагснаас устгалаа",
+    "empty": "Таны сагс хоосон байна.",
+    "total": "Нийт",
+    "cart": "Сагс",
+    "checkout": "Төлбөр хийх",
+    "register": "Бүртгүүлэх"
+  }
+}

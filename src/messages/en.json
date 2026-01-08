@@ -1,0 +1,41 @@
+{
+  "Header": {
+    "about": "About",
+    "aboutGmh": "About GMH",
+    "board": "Board of Advisors",
+    "governance": "Governance",
+    "governanceMenu": "Governance",
+    "careers": "Careers",
+    "committees": "Committees & Panels",
+    "policies": "Policies",
+    "partners": "Partners",
+    "localPartners": "Local Partners",
+    "unPartners": "UN Partners",
+    "privatePartners": "Private Partners",
+    "donate": "Donate",
+    "projects": "Projects",
+    "nationalPrograms": "National Programs",
+    "unPrograms": "UN Programs",
+    "gmhPrograms": "GMH Programs",
+    "initiatives": "Initiatives",
+    "news": "News",
+    "newsMedia": "News Media",
+    "events": "Events",
+    "resources": "Resources",
+    "dataResources": "Data & Resources",
+    "toolsMethods": "Tools & Methods",
+    "publications": "Publications",
+    "membership": "Membership",
+    "categories": "Categories",
+    "applications": "Applications",
+    "gmhBoard": "GMH Board"
+  },
+  "Cart": {
+    "removed": "Product removed from cart",
+    "empty": "Your cart is empty.",
+    "total": "Total",
+    "cart": "Cart",
+    "checkout": "Checkout",
+    "register": "Register"
+  }
+}

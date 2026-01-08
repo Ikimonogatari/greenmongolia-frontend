@@ -1,18 +1,19 @@
 import AboutV1 from "@/components/about/AboutV1";
 import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
 import LayoutV1 from "@/components/layouts/LayoutV1";
+import TeamV1 from "@/components/team/TeamV1";
 import TimelineV1 from "@/components/timeline/TimelineV1";
 import WhyChooseV3 from "@/components/whyChoose/WhyChooseV3";
 
 export const metadata = {
-    title: "GMH - About GMH"
+    title: "GMH - About Us"
 };
 
-const AboutGMHPage = () => {
+const AboutUsPage = () => {
     return (
         <>
             <LayoutV1>
-                <BreadCrumb title="About GMH" breadCrumb="About GMH" />
+                <BreadCrumb title="About Us" breadCrumb="About-us" />
                 <AboutV1 />
                 <TimelineV1 sectionClass="default-padding-bottom" />
                 <WhyChooseV3 />
@@ -21,5 +22,4 @@ const AboutGMHPage = () => {
     );
 };
 
-export default AboutGMHPage;
-
+export default AboutUsPage;

@@ -5,7 +5,7 @@ import MainMenu from "./MainMenu";
 import useSubMenuToggle from "@/hooks/useSubMenuToggle";
 import useSidebarMenu from "@/hooks/useSidebarMenu";
 import useStickyMenu from "@/hooks/useStickyMenu";
-import HeaderCart from "./HeaderCart";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const HeaderV1 = () => {
 
@@ -36,7 +36,7 @@ const HeaderV1 = () => {
                             </button>
                             <MainMenu navbarPlacement="navbar-right" toggleSubMenu={toggleSubMenu} />
                         </div>
-                        <HeaderCart />
+                        <LanguageSwitcher toggleSubMenu={toggleSubMenu} />
                     </div>
                     <div className={`overlay-screen ${isOpen ? "opened" : ""}`} onClick={closeMenu} />
                 </nav>

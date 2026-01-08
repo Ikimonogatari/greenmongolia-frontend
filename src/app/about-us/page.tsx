@@ -6,7 +6,7 @@ import TimelineV1 from "@/components/timeline/TimelineV1";
 import WhyChooseV3 from "@/components/whyChoose/WhyChooseV3";
 
 export const metadata = {
-    title: "Agrica - About Us"
+    title: "GMH - About Us"
 };
 
 const AboutUsPage = () => {
@@ -17,7 +17,6 @@ const AboutUsPage = () => {
                 <AboutV1 />
                 <TimelineV1 sectionClass="default-padding-bottom" />
                 <WhyChooseV3 />
-                <TeamV1 />
             </LayoutV1>
         </>
     );

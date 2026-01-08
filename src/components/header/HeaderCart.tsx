@@ -6,12 +6,14 @@ import { RootState } from "@/store/store";
 import { removeFromCart } from "@/store/slices/cartSlice";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 const HeaderCart = () => {
 
     const [mounted, setMounted] = useState(false);
     const dispatch = useDispatch();
     const cartItems = useSelector((state: RootState) => state.cart.items);
+    const t = useTranslations("Cart");
 
     const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
     const totalAmount = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -22,7 +24,7 @@ const HeaderCart = () => {
 
     const handleRemove = (id: number) => {
         dispatch(removeFromCart(id));
-        toast.error("Product removed from cart");
+        toast.error(t("removed"));
     };
 
     // Render placeholder during SSR to match initial client render
@@ -35,7 +37,7 @@ const HeaderCart = () => {
                 </Link>
                 <ul className="dropdown-menu cart-list">
                     <li className="total">
-                        <p>Your cart is empty.</p>
+                        <p>{t("empty")}</p>
                     </li>
                 </ul>
             </li>
@@ -74,19 +76,19 @@ const HeaderCart = () => {
                                         ))}
                                     </ul>
                                     <li className="total">
-                                        <span className="pull-right"><strong>Total</strong>: ${totalAmount.toFixed(2)}</span>
-                                        <Link href="/cart" className="btn btn-default btn-cart">Cart</Link>
-                                        <Link href="/checkout" className="btn btn-default btn-cart">Checkout</Link>
+                                    <span className="pull-right"><strong>{t("total")}</strong>: ${totalAmount.toFixed(2)}</span>
+                                    <Link href="/cart" className="btn btn-default btn-cart">{t("cart")}</Link>
+                                    <Link href="/checkout" className="btn btn-default btn-cart">{t("checkout")}</Link>
                                     </li>
                                 </>
                             ) : (
                                 <li className="total">
-                                    <p>Your cart is empty.</p>
+                                <p>{t("empty")}</p>
                                 </li>
                             )}
                         </ul>
                     </li>
-                    <li className="button"><Link href="/register">Register</Link></li>
+                <li className="button"><Link href="/register">{t("register")}</Link></li>
                 </ul>
             </div>
         </div>
