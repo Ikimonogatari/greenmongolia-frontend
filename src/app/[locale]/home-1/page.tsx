@@ -11,26 +11,26 @@ import TestimonialV1 from "@/components/testimonials/TestimonialV1";
 import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
 
 export const metadata = {
-    title: "Agrica - Organic Farm Agriculture React NextJs Template"
+  title: "Agrica - Organic Farm Agriculture React NextJs Template",
 };
 
 const Home1 = () => {
-    return (
-        <>
-            <LayoutV1>
-                <BannerV1 />
-                <AboutV1 />
-                <ServiceV1 hasTitle={true} />
-                <BenefitsV1 />
-                <ProductCategory />
-                <TestimonialV1 />
-                <GalleryV1 />
-                <WhyChooseV1 sectionClass="default-padding-bottom" />
-                <ContactV1 />
-                <BlogV1 />
-            </LayoutV1>
-        </>
-    );
+  return (
+    <>
+      <LayoutV1>
+        <BannerV1 />
+        <AboutV1 />
+        <ServiceV1 hasTitle={true} />
+        <BenefitsV1 />
+        <ProductCategory />
+        <TestimonialV1 />
+        <GalleryV1 />
+        <WhyChooseV1 sectionClass="default-padding-bottom" />
+        <ContactV1 />
+        <BlogV1 />
+      </LayoutV1>
+    </>
+  );
 };
 
 export default Home1;

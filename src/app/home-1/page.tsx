@@ -1,5 +1,5 @@
 import AboutV1 from "@/components/about/AboutV1";
-import BannerV1 from "@/components/banner/BannerV1";
+import BannerV3 from "@/components/banner/BannerV3";
 import BenefitsV1 from "@/components/benefits/BenefitsV1";
 import BlogV1 from "@/components/blog/BlogV1";
 import ContactV1 from "@/components/contact/ContactV1";
@@ -18,7 +18,7 @@ const Home1 = () => {
   return (
     <>
       <LayoutV1>
-        <BannerV1 />
+        <BannerV3 />
         <AboutV1 />
         <ServiceV1 hasTitle={true} />
         <BenefitsV1 />

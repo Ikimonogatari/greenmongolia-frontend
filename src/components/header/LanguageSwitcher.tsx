@@ -60,7 +60,7 @@ const LanguageSwitcher = ({toggleSubMenu}: Props) => {
             gap: '6px',
             padding: '10px 0',
             color: 'inherit',
-            fontFamily: 'var(--font-default, "Outfit", sans-serif)',
+            fontFamily: 'var(--font-default)',
           }}
         >
           <i className="fas fa-globe" style={{fontSize: '14px'}} />
@@ -75,7 +75,7 @@ const LanguageSwitcher = ({toggleSubMenu}: Props) => {
             borderRadius: '2px',
             boxShadow: 'var(--box-shadow-extra, 0 5px 50px 0 rgba(0, 0, 0, 0.15))',
             padding: '20px',
-            fontFamily: 'var(--font-default, "Outfit", sans-serif)',
+            fontFamily: 'var(--font-default)',
           }}
         >
           <li>
@@ -91,7 +91,7 @@ const LanguageSwitcher = ({toggleSubMenu}: Props) => {
                 textTransform: 'uppercase',
                 display: 'block',
                 textDecoration: 'none',
-                fontFamily: 'var(--font-default, "Outfit", sans-serif)',
+                fontFamily: 'var(--font-default)',
                 transition: 'color 0.3s ease',
               }}
               onMouseEnter={(e) => {
@@ -121,7 +121,7 @@ const LanguageSwitcher = ({toggleSubMenu}: Props) => {
                 textTransform: 'uppercase',
                 display: 'block',
                 textDecoration: 'none',
-                fontFamily: 'var(--font-default, "Outfit", sans-serif)',
+                fontFamily: 'var(--font-default)',
                 transition: 'color 0.3s ease',
               }}
               onMouseEnter={(e) => {

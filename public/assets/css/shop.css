@@ -2037,7 +2037,7 @@ strong {
 
 .validthemes-shop-check-out-area .woocommerce-order ul li strong {
 	font-weight: 600;
-	font-family: 'Roboto', sans-serif;
+	font-family: var(--font-default);
 }
 
 .validthemes-shop-check-out-area .woocommerce-order h2.woocommerce-order-details__title {
