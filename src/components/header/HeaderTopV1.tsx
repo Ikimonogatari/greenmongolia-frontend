@@ -1,9 +1,9 @@
 "use client";
 
-import {useTranslations} from 'next-intl';
+import { useTranslations } from "next-intl";
 
 const HeaderTopV1 = () => {
-  const t = useTranslations('Header');
+  const t = useTranslations("Header");
 
   return (
     <>
@@ -13,11 +13,11 @@ const HeaderTopV1 = () => {
             <div className="col-lg-8">
               <ul className="item-flex">
                 <li>
-                  <i className="fas fa-clock" /> {t('openingHours')}
+                  <i className="fas fa-clock" /> {t("openingHours")}
                 </li>
                 <li>
-                  <a href={`tel:${t('phone')}`}>
-                    <i className="fas fa-phone-alt" /> {t('phone')}
+                  <a href={`tel:${t("phone")}`}>
+                    <i className="fas fa-phone-alt" /> {t("phone")}
                   </a>
                 </li>
               </ul>

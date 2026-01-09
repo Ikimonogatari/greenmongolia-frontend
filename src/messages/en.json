@@ -36,5 +36,16 @@
     "title": "About GMH",
     "description": "Green Mongolia Hub NGO was established in 2024 as a legally registered civil society organization under the laws of Mongolia. The organization is accredited to the United Nations Convention to Combat Desertification (UNCCD) and is a member of both the WOCAT Global SLM Network and the Drynet Network for Land Degradation Neutrality (LDN). The organization works at the intersection of science, community empowerment, and policy advocacy, focusing on sustainable land management, rangeland restoration, climate resilience, and youth engagement.",
     "button": "Learn More"
+  },
+  "About-About": {
+    "title": "About GMH",
+    "description": "Green Mongolia Hub integrates scientific knowledge, international networks, and local experience to address Mongolia’s land degradation challenges through socially, environmentally, and economically interconnected solutions.",
+    "fields": [
+      "Localization, field implementation, and documentation of international SLM best practices, particularly those from WOCAT (the World Overview of Conservation Approaches and Technologies— the global database for land conservation methods and technologies).",
+      "Capacity building for local communities, herders, women, and youth, including trainings, hands-on demonstrations, and participatory monitoring.",
+      "Supporting multi-stakeholder cooperation in land restoration, ecosystem protection, and rangeland management.",
+      "Promoting Mongolia’s good practices through global platforms such as UNCCD, WOCAT, and Drynet, and increasing civil society engagement in policy development.",
+      "Advancing nature-based solutions and green technologies that reinforce local development and environmental sustainability."
+    ]
   }
 }
