@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaPhoneAlt, FaCommentsDollar } from "react-icons/fa";
 
 const HeaderTopV2 = () => {
     return (
@@ -11,7 +12,7 @@ const HeaderTopV2 = () => {
                             <ul>
                                 <li>
                                     <div className="icon">
-                                        <i className="fas fa-phone-alt" />
+                                        <FaPhoneAlt />
                                     </div>
                                     <div className="content">
                                         <span>Call Anytime</span>
@@ -29,7 +30,7 @@ const HeaderTopV2 = () => {
                             <ul>
                                 <li>
                                     <div className="icon">
-                                        <i className="fas fa-comments-alt-dollar" />
+                                        <FaCommentsDollar />
                                     </div>
                                     <div className="content">
                                         <span>Write Email</span>

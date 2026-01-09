@@ -7,6 +7,7 @@ import { removeFromCart } from "@/store/slices/cartSlice";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { FaShoppingCart, FaTimes } from "react-icons/fa";
 
 const HeaderCart = () => {
 
@@ -32,7 +33,7 @@ const HeaderCart = () => {
         return (
             <li className="dropdown">
                 <Link href="#" className="dropdown-toggle" data-toggle="dropdown">
-                    <i className="far fa-shopping-cart" />
+                    <FaShoppingCart />
                     <span className="badge">0</span>
                 </Link>
                 <ul className="dropdown-menu cart-list">
@@ -50,7 +51,7 @@ const HeaderCart = () => {
                 <ul>
                     <li className="dropdown">
                         <Link href="#" scroll={false} className="dropdown-toggle" data-toggle="dropdown">
-                            <i className="far fa-shopping-cart" />
+                            <FaShoppingCart />
                             <span className="badge">{totalItems}</span>
                         </Link>
 
@@ -65,7 +66,7 @@ const HeaderCart = () => {
                                                         <Image src={`/assets/img/products/${item.thumb}`} alt={item.title} width={50} height={50} />
                                                     </span>
                                                     <Link href="#" className="remove-product" onClick={() => handleRemove(item.id)} scroll={false}>
-                                                        <i className="fas fa-times" />
+                                                        <FaTimes />
                                                     </Link>
                                                 </div>
                                                 <div className="info">

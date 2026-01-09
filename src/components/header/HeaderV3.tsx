@@ -10,6 +10,7 @@ import HeaderSearch from "./HeaderSearch";
 import useSearchBar from "@/hooks/useSearchBar";
 import useSidebarInfo from "@/hooks/useSidebarInfo";
 import HeaderCart from "./HeaderCart";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const HeaderV3 = () => {
 
@@ -31,7 +32,7 @@ const HeaderV3 = () => {
 
                             <div className="navbar-header">
                                 <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" onClick={openMenu}>
-                                    <i className="fa fa-bars" />
+                                    <FaBars />
                                 </button>
                                 <Link className="navbar-brand" href="/">
                                     <Image src="/assets/img/logo-mix.png" className="logo" alt="Logo" width={790} height={240} />
@@ -42,7 +43,7 @@ const HeaderV3 = () => {
                         <div className={`collapse navbar-collapse ${isOpen ? "show collapse-mobile" : "collapse-mobile"}`} id="navbar-menu">
                             <Image src="/assets/img/logo.png" alt="Logo" width={790} height={240} />
                             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" onClick={closeMenu}>
-                                <i className="fa fa-times" />
+                                <FaTimes />
                             </button>
                             <MainMenu navbarPlacement="navbar-right" toggleSubMenu={toggleSubMenu} />
                         </div>

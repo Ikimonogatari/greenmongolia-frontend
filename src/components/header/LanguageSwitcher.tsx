@@ -4,6 +4,7 @@ import {useRouter} from 'next/navigation';
 import {useLocale} from 'next-intl';
 import {useTransition} from 'react';
 import {setLocale} from '@/actions/locale';
+import { FaGlobe } from "react-icons/fa";
 
 type Props = {
   toggleSubMenu?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
@@ -54,16 +55,18 @@ const LanguageSwitcher = ({toggleSubMenu}: Props) => {
           onClick={toggleSubMenu}
           style={{
             cursor: 'pointer',
-            textDecoration: 'none',
             display: 'flex',
             alignItems: 'center',
             gap: '6px',
             padding: '10px 0',
             color: 'inherit',
+            textDecoration: 'none',
             fontFamily: 'var(--font-default)',
+            fontWeight: 600,
+            fontSize: '14px',
           }}
         >
-          <i className="fas fa-globe" style={{fontSize: '14px'}} />
+          <FaGlobe style={{fontSize: '14px'}} />
           <span style={{fontWeight: 700}}>{locale.toUpperCase()}</span>
         </a>
         <ul 
@@ -71,7 +74,8 @@ const LanguageSwitcher = ({toggleSubMenu}: Props) => {
           style={{
             minWidth: '140px',
             background: 'var(--white)',
-            border: '1px solid transparent',
+            color: 'var(--color-heading)',
+            border: '1px solid rgba(0,0,0,0.05)',
             borderRadius: '2px',
             boxShadow: 'var(--box-shadow-extra, 0 5px 50px 0 rgba(0, 0, 0, 0.15))',
             padding: '20px',

@@ -1,3 +1,5 @@
+import { FaSearch, FaTimes } from "react-icons/fa";
+
 interface DataType {
     searchClose?: () => void;
     openSearch?: boolean;
@@ -22,9 +24,9 @@ const HeaderSearch = ({ searchClose, openSearch, searchOpen }: DataType) => {
                 <div className="container-xl">
                     <form onSubmit={handleSearch}>
                         <div className="input-group">
-                            <span className="input-group-addon"><i className="fa fa-search" onClick={searchOpen} /></span>
+                            <span className="input-group-addon"><FaSearch onClick={searchOpen} /></span>
                             <input type="text" className="form-control" placeholder="Search" />
-                            <span className="input-group-addon close-search" onClick={searchClose}><i className="fa fa-times"></i></span>
+                            <span className="input-group-addon close-search" onClick={searchClose}><FaTimes /></span>
                         </div>
                     </form>
                 </div>

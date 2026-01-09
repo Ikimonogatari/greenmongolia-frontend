@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import HeaderNewsLetter from "../form/HeaderNewsLetter";
 import SocialShareV2 from "../social/SocialShareV2";
+import { FaTimes } from "react-icons/fa";
 
 interface SidebarInfoProps {
     isInfoOpen?: boolean;
@@ -27,7 +28,7 @@ const HeaderSidebar = ({ isInfoOpen, closeInfoBar, openInfoBar }: SidebarInfoPro
                 </div>
                 <div className={`side ${isInfoOpen ? "on" : ""}`}>
                     <Link href="#" className="close-side" scroll={false} onClick={closeInfoBar}>
-                        <i className="fas fa-times" />
+                        <FaTimes />
                     </Link>
                     <div className="widget">
                         <div className="logo">

@@ -1,6 +1,14 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import {
+  FaClock,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaPhoneAlt,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 
 const HeaderTopV1 = () => {
   const t = useTranslations("Header");
@@ -13,11 +21,12 @@ const HeaderTopV1 = () => {
             <div className="col-lg-8">
               <ul className="item-flex">
                 <li>
-                  <i className="fas fa-clock" /> {t("openingHours")}
+                  <FaClock /> &nbsp; {t("openingHours")}
                 </li>
+
                 <li>
                   <a href={`tel:${t("phone")}`}>
-                    <i className="fas fa-phone-alt" /> {t("phone")}
+                    <FaPhoneAlt /> {t("phone")}
                   </a>
                 </li>
               </ul>
@@ -31,7 +40,7 @@ const HeaderTopV1 = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <i className="fab fa-facebook-f" />
+                      <FaFacebookF />
                     </a>
                   </li>
                   <li>
@@ -40,7 +49,7 @@ const HeaderTopV1 = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <i className="fab fa-twitter" />
+                      <FaTwitter />
                     </a>
                   </li>
                   <li>
@@ -49,7 +58,7 @@ const HeaderTopV1 = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <i className="fab fa-youtube" />
+                      <FaYoutube />
                     </a>
                   </li>
                   <li>
@@ -58,7 +67,7 @@ const HeaderTopV1 = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <i className="fab fa-linkedin-in" />
+                      <FaLinkedinIn />
                     </a>
                   </li>
                 </ul>

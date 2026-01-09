@@ -5,10 +5,10 @@
 
 @font-face {
     font-family: "flaticon";
-    src: url("../fonts/flaticon.eot");
-    src: url("../fonts/flaticon.eot?#iefix") format("embedded-opentype"),
-            url("../fonts/flaticon.woff") format("woff"),
-            url("../fonts/flaticon.ttf") format("truetype");
+    src: url("/assets/fonts/flaticon.eot");
+    src: url("/assets/fonts/flaticon.eot?#iefix") format("embedded-opentype"),
+            url("/assets/fonts/flaticon.woff") format("woff"),
+            url("/assets/fonts/flaticon.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
     }

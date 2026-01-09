@@ -6,6 +6,7 @@ import useSidebarMenu from '@/hooks/useSidebarMenu';
 import useStickyMenu from '@/hooks/useStickyMenu';
 import MainMenu from './MainMenu';
 import HeaderCart from './HeaderCart';
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const HeaderV2 = () => {
 
@@ -20,7 +21,7 @@ const HeaderV2 = () => {
                     <div className="container-full d-flex justify-content-between align-items-center">
                         <div className="navbar-header">
                             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" onClick={openMenu}>
-                                <i className="fa fa-bars" />
+                                <FaBars />
                             </button>
                             <Link className="navbar-brand" href="/">
                                 <Image src="/assets/img/logo-light.png" className="logo desktop" alt="Logo" width={790} height={240} />
@@ -31,7 +32,7 @@ const HeaderV2 = () => {
                         <div className={`collapse navbar-collapse ${isOpen ? "show collapse-mobile" : "collapse-mobile"}`} id="navbar-menu">
                             <Image src="/assets/img/logo.png" alt="Logo" width={790} height={240} />
                             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" onClick={closeMenu}>
-                                <i className="fa fa-times" />
+                                <FaTimes />
                             </button>
                             <MainMenu navbarPlacement="navbar-right" toggleSubMenu={toggleSubMenu} />
                         </div>

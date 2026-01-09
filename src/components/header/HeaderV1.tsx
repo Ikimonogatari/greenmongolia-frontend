@@ -4,6 +4,7 @@ import useStickyMenu from "@/hooks/useStickyMenu";
 import useSubMenuToggle from "@/hooks/useSubMenuToggle";
 import Image from "next/image";
 import Link from "next/link";
+import { FaBars, FaTimes } from "react-icons/fa";
 import LanguageSwitcher from "./LanguageSwitcher";
 import MainMenu from "./MainMenu";
 
@@ -30,7 +31,7 @@ const HeaderV1 = () => {
                   data-target="#navbar-menu"
                   onClick={openMenu}
                 >
-                  <i className="fa fa-bars" />
+                  <FaBars />
                 </button>
                 <Link className="navbar-brand" href="/">
                   <Image
@@ -63,7 +64,7 @@ const HeaderV1 = () => {
                 data-target="#navbar-menu"
                 onClick={closeMenu}
               >
-                <i className="fa fa-times" />
+                <FaTimes />
               </button>
               <MainMenu
                 navbarPlacement="navbar-right"
