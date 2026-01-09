@@ -14,14 +14,34 @@ const LanguageSwitcher = ({toggleSubMenu}: Props) => {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
-  const handleSwitch = async (nextLocale: string) => {
+  const handleSwitch = async (nextLocale: string, e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
     if (nextLocale === locale) return;
 
-    await setLocale(nextLocale);
+    // Close dropdown by removing 'on' class from parent
+    const listItem = e.currentTarget.closest('li.dropdown');
+    if (listItem) {
+      listItem.classList.remove('on');
+      const subMenu = listItem.querySelector('ul.dropdown-menu') as HTMLUListElement | null;
+      if (subMenu) {
+        subMenu.style.maxHeight = '0';
+      }
+    }
 
-    startTransition(() => {
-      router.refresh();
-    });
+    try {
+      // Set the locale cookie
+      await setLocale(nextLocale);
+      
+      // Small delay to ensure cookie is written, then reload
+      // This ensures the middleware will read the new cookie on reload
+      setTimeout(() => {
+        window.location.reload();
+      }, 100);
+    } catch (error) {
+      console.error('Failed to set locale:', error);
+      // Fallback: still reload even if cookie setting fails
+      window.location.reload();
+    }
   };
 
   return (
@@ -39,23 +59,50 @@ const LanguageSwitcher = ({toggleSubMenu}: Props) => {
             alignItems: 'center',
             gap: '6px',
             padding: '10px 0',
+            color: 'inherit',
+            fontFamily: 'var(--font-default, "Outfit", sans-serif)',
           }}
         >
           <i className="fas fa-globe" style={{fontSize: '14px'}} />
           <span style={{fontWeight: 700}}>{locale.toUpperCase()}</span>
         </a>
-        <ul className="dropdown-menu" style={{minWidth: '140px'}}>
+        <ul 
+          className="dropdown-menu" 
+          style={{
+            minWidth: '140px',
+            background: 'var(--white)',
+            border: '1px solid transparent',
+            borderRadius: '2px',
+            boxShadow: 'var(--box-shadow-extra, 0 5px 50px 0 rgba(0, 0, 0, 0.15))',
+            padding: '20px',
+            fontFamily: 'var(--font-default, "Outfit", sans-serif)',
+          }}
+        >
           <li>
             <a
               href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                handleSwitch('en');
-              }}
+              onClick={(e) => handleSwitch('en', e)}
               style={{
                 cursor: 'pointer',
+                padding: '12px 15px',
+                color: locale === 'en' ? 'var(--color-primary, #f7c35f)' : 'var(--color-heading, #04000b)',
                 fontWeight: locale === 'en' ? 700 : 600,
-                color: locale === 'en' ? 'var(--blue, #007bff)' : 'inherit',
+                fontSize: '16px',
+                textTransform: 'uppercase',
+                display: 'block',
+                textDecoration: 'none',
+                fontFamily: 'var(--font-default, "Outfit", sans-serif)',
+                transition: 'color 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                if (locale !== 'en') {
+                  e.currentTarget.style.color = 'var(--color-primary, #f7c35f)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (locale !== 'en') {
+                  e.currentTarget.style.color = 'var(--color-heading, #04000b)';
+                }
               }}
             >
               English
@@ -64,14 +111,28 @@ const LanguageSwitcher = ({toggleSubMenu}: Props) => {
           <li>
             <a
               href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                handleSwitch('mn');
-              }}
+              onClick={(e) => handleSwitch('mn', e)}
               style={{
                 cursor: 'pointer',
+                padding: '12px 15px',
+                color: locale === 'mn' ? 'var(--color-primary, #f7c35f)' : 'var(--color-heading, #04000b)',
                 fontWeight: locale === 'mn' ? 700 : 600,
-                color: locale === 'mn' ? 'var(--blue, #007bff)' : 'inherit',
+                fontSize: '16px',
+                textTransform: 'uppercase',
+                display: 'block',
+                textDecoration: 'none',
+                fontFamily: 'var(--font-default, "Outfit", sans-serif)',
+                transition: 'color 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                if (locale !== 'mn') {
+                  e.currentTarget.style.color = 'var(--color-primary, #f7c35f)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (locale !== 'mn') {
+                  e.currentTarget.style.color = 'var(--color-heading, #04000b)';
+                }
               }}
             >
               Монгол

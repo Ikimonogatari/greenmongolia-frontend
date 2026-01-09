@@ -28,7 +28,9 @@
     "membership": "Membership",
     "categories": "Categories",
     "applications": "Applications",
-    "gmhBoard": "GMH Board"
+    "gmhBoard": "GMH Board",
+    "openingHours": "Opening Hours : Sunday- Friday, 08:00 am - 05:00pm",
+    "phone": "+4733378901"
   },
   "Cart": {
     "removed": "Product removed from cart",

@@ -92,10 +92,11 @@ Sidebar heading:  22px 'Outfit', sans-serif
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 /* Varialbes */
 :root {
-	--font-default: 'Outfit', "sans-serif";
+	--font-default: 'Outfit', 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 	--font-secondary: 'Shadows Into Light Two', "cursive";
 	--fontawesome: "Font Awesome 5 Pro";
 	--black: #000000;
@@ -339,6 +340,28 @@ body {
 	overflow-x: hidden;
 	background-color: var(--white);
 	color: var(--color-paragraph);
+}
+
+/* Ensure all header elements use proper font stack for Mongolian support */
+header,
+header *,
+.top-bar-area,
+.top-bar-area *,
+.navbar,
+.navbar *,
+nav,
+nav * {
+	font-family: var(--font-default) !important;
+}
+
+/* Specific rules for navigation text */
+.navbar-nav a,
+.navbar-nav li,
+.dropdown-menu a,
+.dropdown-menu li,
+.top-bar-area ul li,
+.top-bar-area a {
+	font-family: var(--font-default) !important;
 }
 
 h1,
@@ -2879,6 +2902,11 @@ a.btn-round-animation.dark {
 	align-items: center;
 	justify-content: space-between;
 	padding: 10px 0;
+	font-family: var(--font-default) !important;
+}
+
+.top-bar-area * {
+	font-family: var(--font-default) !important;
 }
 
 .top-style-two .info li {

@@ -1557,6 +1557,13 @@ nav.navbar.validnavs.brand-center {
 		font-weight: 600;
 		font-size: 16px;
 		text-transform: uppercase;
+		font-family: var(--font-default, 'Outfit', 'Inter', 'Roboto', sans-serif) !important;
+	}
+
+	/* Ensure main navbar links have proper font for Mongolian */
+	nav.navbar.validnavs ul.nav>li>a,
+	nav.navbar.validnavs ul.nav>li>a.dropdown-toggle {
+		font-family: var(--font-default, 'Outfit', 'Inter', 'Roboto', sans-serif) !important;
 	}
 
 	nav.navbar.validnavs li.dropdown ul.dropdown-menu>li:last-child>a {
@@ -1566,6 +1573,7 @@ nav.navbar.validnavs.brand-center {
 	nav.navbar.validnavs ul li.dropdown ul.dropdown-menu li a {
 		color: var(--color-heading);
 		display: block;
+		font-family: var(--font-default, 'Outfit', 'Inter', 'Roboto', sans-serif) !important;
 		font-size: 16px;
 		margin-bottom: 0;
 		padding: 7px 15px !important;

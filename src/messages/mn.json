@@ -28,7 +28,9 @@
     "membership": "Гишүүнчлэл",
     "categories": "Ангилал",
     "applications": "Өргөдөл",
-    "gmhBoard": "GMH зөвлөл"
+    "gmhBoard": "GMH зөвлөл",
+    "openingHours": "Ажлын цаг : Ням- Баасан, 08:00 - 17:00",
+    "phone": "+4733378901"
   },
   "Cart": {
     "removed": "Барааг сагснаас устгалаа",
