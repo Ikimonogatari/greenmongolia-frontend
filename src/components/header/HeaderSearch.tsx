@@ -18,13 +18,25 @@ const HeaderSearch = ({ searchClose, openSearch, searchOpen }: DataType) => {
         form.reset()
     }
 
+    const handleSearchOpen = (e: React.MouseEvent<HTMLSpanElement>) => {
+        if (searchOpen) {
+            // Create a synthetic event that matches the expected type
+            const syntheticEvent = {
+                ...e,
+                currentTarget: e.currentTarget,
+                target: e.currentTarget as HTMLAnchorElement,
+            } as unknown as React.MouseEvent<HTMLAnchorElement>;
+            searchOpen(syntheticEvent);
+        }
+    };
+
     return (
         <>
             <div className={`top-search ${openSearch ? "search-open " : "search-close"}`}>
                 <div className="container-xl">
                     <form onSubmit={handleSearch}>
                         <div className="input-group">
-                            <span className="input-group-addon"><FaSearch onClick={searchOpen} /></span>
+                            <span className="input-group-addon" onClick={handleSearchOpen}><FaSearch /></span>
                             <input type="text" className="form-control" placeholder="Search" />
                             <span className="input-group-addon close-search" onClick={searchClose}><FaTimes /></span>
                         </div>

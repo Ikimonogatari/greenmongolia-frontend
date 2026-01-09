@@ -1,7 +1,6 @@
 import AboutV1 from "@/components/about/AboutV1";
 import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
 import LayoutV1 from "@/components/layouts/LayoutV1";
-import TeamV1 from "@/components/team/TeamV1";
 import TimelineV1 from "@/components/timeline/TimelineV1";
 import WhyChooseV3 from "@/components/whyChoose/WhyChooseV3";
 

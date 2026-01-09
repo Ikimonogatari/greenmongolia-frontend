@@ -10,10 +10,13 @@ export default getRequestConfig(async ({requestLocale}) => {
   const cookieStore = await cookies();
   const cookieLocale = cookieStore.get('NEXT_LOCALE')?.value;
   
-  let locale = headerLocale || cookieLocale || requestLocale || defaultLocale;
+  // Await requestLocale if it's a promise
+  const resolvedRequestLocale = typeof requestLocale === 'string' ? requestLocale : await requestLocale;
+  
+  let locale: typeof locales[number] = (headerLocale || cookieLocale || resolvedRequestLocale || defaultLocale) as typeof locales[number];
   
   // Validate locale
-  if (!locale || !locales.includes(locale as any)) {
+  if (!locale || !locales.includes(locale)) {
     locale = defaultLocale;
   }
 

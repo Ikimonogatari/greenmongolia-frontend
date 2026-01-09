@@ -1,8 +1,6 @@
 "use client";
 
-import {useRouter} from 'next/navigation';
 import {useLocale} from 'next-intl';
-import {useTransition} from 'react';
 import {setLocale} from '@/actions/locale';
 import { FaGlobe } from "react-icons/fa";
 
@@ -12,8 +10,6 @@ type Props = {
 
 const LanguageSwitcher = ({toggleSubMenu}: Props) => {
   const locale = useLocale();
-  const router = useRouter();
-  const [isPending, startTransition] = useTransition();
 
   const handleSwitch = async (nextLocale: string, e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
