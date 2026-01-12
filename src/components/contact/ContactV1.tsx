@@ -1,18 +1,51 @@
 "use client"
 import Image from 'next/image';
 import { toast } from 'react-toastify';
+import { useSubmitContactMutation } from '@/store/api/contactsApi';
 
 interface FormEventHandler {
     (event: React.FormEvent<HTMLFormElement>): void;
 }
 
 const ContactV1 = () => {
+    const [submitContact, { isLoading: isSubmitting }] = useSubmitContactMutation();
 
-    const handleForm: FormEventHandler = (event) => {
-        event.preventDefault()
+    const handleForm: FormEventHandler = async (event) => {
+        event.preventDefault();
         const form = event.target as HTMLFormElement;
-        form.reset()
-        toast.success("Thanks For Your Message")
+        const formData = new FormData(form);
+        
+        // Extract form values
+        const name = formData.get('name') as string;
+        const email = formData.get('email') as string;
+        const phone = formData.get('phone') as string;
+        const comments = formData.get('comments') as string; // Maps to "about" field
+
+        // Validate required fields
+        if (!name || !email || !phone || !comments) {
+            toast.error("Please fill in all required fields");
+            return;
+        }
+
+        try {
+            // Submit contact form to Directus
+            await submitContact({
+                name,
+                email,
+                phone,
+                about: comments, // Map "comments" field to "about"
+                status: "published",
+            }).unwrap();
+
+            // Success - reset form and show success message
+            form.reset();
+            toast.success("Thanks For Your Message! We'll get back to you soon.");
+        } catch (error: any) {
+            // Error handling
+            console.error("Error submitting contact form:", error);
+            const errorMessage = error?.data?.message || error?.message || "Failed to send message. Please try again.";
+            toast.error(errorMessage);
+        }
     }
 
     return (
@@ -61,8 +94,14 @@ const ContactV1 = () => {
                                     </div>
                                     <div className="row">
                                         <div className="col-lg-12">
-                                            <button type="submit" name="submit" id="submit">
-                                                <i className="fa fa-paper-plane" /> Get in Touch
+                                            <button 
+                                                type="submit" 
+                                                name="submit" 
+                                                id="submit"
+                                                disabled={isSubmitting}
+                                            >
+                                                <i className="fa fa-paper-plane" /> 
+                                                {isSubmitting ? "Sending..." : "Get in Touch"}
                                             </button>
                                         </div>
                                     </div>
