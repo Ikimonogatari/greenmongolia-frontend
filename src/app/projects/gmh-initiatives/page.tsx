@@ -1,23 +1,16 @@
-import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
-import GalleryV2 from "@/components/gallery/GalleryV2";
+"use client";
+import BreadCrumbWrapper from "@/components/breadCrumb/BreadCrumbWrapper";
 import LayoutV1 from "@/components/layouts/LayoutV1";
-import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
+import GMHInitiativesContent from "@/components/project/GMHInitiativesContent";
 
-export const metadata = {
-    title: "GMH - GMH initiatives"
-};
-
-const GMHInitiativesPage = () => {
+export default function GMHInitiativesPage() {
     return (
         <>
             <LayoutV1>
-                <BreadCrumb title="GMH initiatives" breadCrumb="Projects & Programmes / GMH initiatives" />
-                <GalleryV2 />
-                <WhyChooseV1 />
+                <BreadCrumbWrapper titleKey="gmhInitiatives" breadCrumbKey="projectsProgrammes / gmhInitiatives" />
+                <GMHInitiativesContent />
             </LayoutV1>
         </>
     );
-};
-
-export default GMHInitiativesPage;
+}
 

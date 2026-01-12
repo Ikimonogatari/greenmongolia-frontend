@@ -1,23 +1,18 @@
-import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
+"use client";
+import BreadCrumbWrapper from "@/components/breadCrumb/BreadCrumbWrapper";
 import LayoutV1 from "@/components/layouts/LayoutV1";
 import Partner from "@/components/partner/Partner";
 import UNPartnersContent from "@/components/partner/UNPartnersContent";
 
-export const metadata = {
-    title: "GMH - UN partners"
-};
-
-const UNPartnersPage = () => {
+export default function UNPartnersPage() {
     return (
         <>
             <LayoutV1>
-                <BreadCrumb title="UN partners" breadCrumb="Partners / UN partners" />
+                <BreadCrumbWrapper titleKey="unPartners" breadCrumbKey="partners / unPartners" />
                 <Partner />
                 <UNPartnersContent />
             </LayoutV1>
         </>
     );
-};
-
-export default UNPartnersPage;
+}
 

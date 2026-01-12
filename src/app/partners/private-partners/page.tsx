@@ -1,23 +1,18 @@
-import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
+"use client";
+import BreadCrumbWrapper from "@/components/breadCrumb/BreadCrumbWrapper";
 import LayoutV1 from "@/components/layouts/LayoutV1";
 import Partner from "@/components/partner/Partner";
 import PrivatePartnersContent from "@/components/partner/PrivatePartnersContent";
 
-export const metadata = {
-    title: "GMH - Private partners"
-};
-
-const PrivatePartnersPage = () => {
+export default function PrivatePartnersPage() {
     return (
         <>
             <LayoutV1>
-                <BreadCrumb title="Private partners" breadCrumb="Partners / Private partners" />
+                <BreadCrumbWrapper titleKey="privatePartners" breadCrumbKey="partners / privatePartners" />
                 <Partner />
                 <PrivatePartnersContent />
             </LayoutV1>
         </>
     );
-};
-
-export default PrivatePartnersPage;
+}
 

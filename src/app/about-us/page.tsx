@@ -1,27 +1,18 @@
-import AboutV1 from "@/components/about/AboutV1";
-import ArticlesTest from "@/components/blog/ArticlesTest";
+"use client";
+import AboutContent from "@/components/about/AboutContent";
 import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
 import LayoutV1 from "@/components/layouts/LayoutV1";
-import TimelineV1 from "@/components/timeline/TimelineV1";
-import WhyChooseV3 from "@/components/whyChoose/WhyChooseV3";
+import { useTranslations } from "next-intl";
 
-export const metadata = {
-  title: "GMH - About Us",
-};
-
-const AboutUsPage = () => {
+export default function AboutUsPage() {
+  const t = useTranslations("Breadcrumb");
+  
   return (
     <>
       <LayoutV1>
-        <BreadCrumb title="About Us" breadCrumb="About-us" />
-        {/* Temporary: Articles API Test Component - Remove after testing */}
-        <ArticlesTest />
-        <AboutV1 />
-        <TimelineV1 sectionClass="default-padding-bottom" />
-        <WhyChooseV3 />
+        <BreadCrumb title={t("aboutUs")} breadCrumb={t("about")} />
+        <AboutContent />
       </LayoutV1>
     </>
   );
-};
-
-export default AboutUsPage;
+}

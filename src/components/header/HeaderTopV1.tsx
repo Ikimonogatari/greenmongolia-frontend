@@ -2,12 +2,13 @@
 
 import { useTranslations } from "next-intl";
 import {
-  FaClock,
   FaFacebookF,
   FaLinkedinIn,
   FaPhoneAlt,
+  FaEnvelope,
   FaTwitter,
   FaYoutube,
+  FaGlobe,
 } from "react-icons/fa";
 
 const HeaderTopV1 = () => {
@@ -21,12 +22,21 @@ const HeaderTopV1 = () => {
             <div className="col-lg-8">
               <ul className="item-flex">
                 <li>
-                  <FaClock /> &nbsp; {t("openingHours")}
-                </li>
-
-                <li>
+                  <FaPhoneAlt /> &nbsp; 
                   <a href={`tel:${t("phone")}`}>
-                    <FaPhoneAlt /> {t("phone")}
+                    {t("phone")}
+                  </a>
+                </li>
+                <li>
+                  <FaEnvelope /> &nbsp; 
+                  <a href={`mailto:${t("email")}`}>
+                    {t("email")}
+                  </a>
+                </li>
+                <li>
+                  <FaGlobe /> &nbsp; 
+                  <a href={t("website")} target="_blank" rel="noreferrer">
+                    {t("websiteText")}
                   </a>
                 </li>
               </ul>

@@ -11,12 +11,29 @@ interface DataType {
 const FooterRecentPost = ({ blog }: { blog: DataType }) => {
     const { id, title, full_date, thumb } = blog;
 
+    // Handle image URL - can be full URL or relative path
+    const imageSrc = thumb 
+        ? (thumb.startsWith('http') || thumb.startsWith('/') 
+            ? thumb 
+            : `/assets/img/thumbs/${thumb}`)
+        : '/assets/img/blog/default-thumb.jpg';
+    
+    // Check if it's a Directus URL (external URL)
+    const isDirectusUrl = imageSrc.startsWith('http');
+
     return (
         <>
             <li>
                 <div className="thumb">
                     <Link href={`/blog-single-with-sidebar/${id}`}>
-                        <Image src={`/assets/img/thumbs/${thumb}`} alt="Thumb" width={400} height={400} className="h-auto" />
+                        <Image 
+                            src={imageSrc} 
+                            alt={title || "Article"} 
+                            width={400} 
+                            height={400} 
+                            className="h-auto"
+                            unoptimized={isDirectusUrl}
+                        />
                     </Link>
                 </div>
                 <div className="info">

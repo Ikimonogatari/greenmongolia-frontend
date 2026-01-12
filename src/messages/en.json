@@ -1,4 +1,41 @@
 {
+  "Breadcrumb": {
+    "home": "Home",
+    "errorPage": "Error Page",
+    "notFound": "404",
+    "about": "About",
+    "aboutUs": "About Us",
+    "boardOfAdvisors": "Board of Advisors",
+    "governance": "Governance",
+    "gmhBoard": "GMH Board",
+    "committeesPanelsGroups": "Committees, Panels & Groups",
+    "policiesStrategies": "Policies & Strategies",
+    "governanceSlash": "Governance /",
+    "partners": "Partners",
+    "localPartners": "Local Partners",
+    "unPartners": "UN Partners",
+    "privatePartners": "Private Partners",
+    "donate": "Donate",
+    "projects": "Projects",
+    "projectsProgrammes": "Projects & Programmes",
+    "nationalProgramsProjects": "National Programs & Projects",
+    "unProgramsProjects": "UN Programs & Projects",
+    "gmhProgramsProjects": "GMH Programs & Projects",
+    "gmhInitiatives": "GMH Initiatives",
+    "news": "News",
+    "newsEvents": "News & Events",
+    "newsMedia": "News Media",
+    "events": "Events",
+    "resources": "Resources",
+    "dataResources": "Data & Resources",
+    "gmhDataResources": "GMH Data & Resources",
+    "gmhToolsMethods": "GMH Tools & Methods",
+    "gmhPublications": "GMH Publications",
+    "membership": "Membership",
+    "membershipCategories": "Membership Categories",
+    "applications": "Applications",
+    "careers": "Careers"
+  },
   "Header": {
     "about": "About",
     "aboutGmh": "About GMH",
@@ -29,8 +66,38 @@
     "categories": "Categories",
     "applications": "Applications",
     "gmhBoard": "GMH Board",
-    "openingHours": "Opening Hours : Sunday- Friday, 08:00 am - 05:00pm",
-    "phone": "+4733378901"
+    "phone": "+976 11 310 0044",
+    "email": "info@green-mongolia.com",
+    "website": "https://www.unccd.int/cso/green-mongolia-hub-ngo",
+    "websiteText": "UNCCD CSO Profile",
+    "contactPhone": "Contact Us",
+    "contactEmail": "Email Us"
+  },
+  "Home": {
+    "latestNews": {
+      "subTitle": "Latest News",
+      "title": "Stay Updated with Our Latest News & Updates",
+      "continueReading": "Continue Reading",
+      "loading": "Loading articles...",
+      "error": "Error loading articles",
+      "noPosts": "No articles available at the moment"
+    },
+    "services": {
+      "subTitle": "What We Do",
+      "title": "Our Core Activities & Programs",
+      "service1": {
+        "title": "SLM Best Practices",
+        "description": "Localization, field implementation, and documentation of international SLM best practices, particularly those from WOCAT (the World Overview of Conservation Approaches and Technologies)."
+      },
+      "service2": {
+        "title": "Capacity Building",
+        "description": "Capacity building for local communities, herders, women, and youth, including trainings, hands-on demonstrations, and participatory monitoring."
+      },
+      "service3": {
+        "title": "Multi-Stakeholder Cooperation",
+        "description": "Supporting multi-stakeholder cooperation in land restoration, ecosystem protection, and rangeland management."
+      }
+    }
   },
   "Home-About": {
     "title": "About GMH",
@@ -47,6 +114,104 @@
       "Promoting Mongolia's good practices through global platforms such as UNCCD, WOCAT, and Drynet, and increasing civil society engagement in policy development.",
       "Advancing nature-based solutions and green technologies that reinforce local development and environmental sustainability."
     ]
+  },
+  "About": {
+    "title": "About GMH",
+    "description": "Green Mongolia Hub NGO was established in 2024 as a legally registered civil society organization under the laws of Mongolia. The organization is accredited to the United Nations Convention to Combat Desertification (UNCCD) and is a member of both the WOCAT Global SLM Network and the Drynet Network for Land Degradation Neutrality (LDN).",
+    "learnMore": "Learn More",
+    "coreAreas": {
+      "area1": {
+        "title": "SLM Best Practices",
+        "description": "Localization, field implementation, and documentation of international SLM best practices, particularly those from WOCAT."
+      },
+      "area2": {
+        "title": "Capacity Building",
+        "description": "Capacity building for local communities, herders, women, and youth, including trainings, hands-on demonstrations, and participatory monitoring."
+      },
+      "area3": {
+        "title": "Multi-Stakeholder Cooperation",
+        "description": "Supporting multi-stakeholder cooperation in land restoration, ecosystem protection, and rangeland management."
+      }
+    },
+    "achievements": {
+      "achievement1": {
+        "title": "UNCCD Accredited",
+        "description": "Accredited to the United Nations Convention to Combat Desertification, enabling participation in global policy processes."
+      },
+      "achievement2": {
+        "title": "WOCAT Member",
+        "description": "Member of the WOCAT Global Sustainable Land Management Network, providing access to over 2,400 SLM practices."
+      },
+      "achievement3": {
+        "title": "Drynet Member",
+        "description": "Member of the Drynet Network for Land Degradation Neutrality (LDN), promoting best practices in land restoration."
+      }
+    },
+    "progress": {
+      "progress1": {
+        "title": "International Recognition"
+      },
+      "progress2": {
+        "title": "Community Impact"
+      }
+    },
+    "facts": {
+      "fact1": "Year Established",
+      "fact2": "International Networks",
+      "fact3": "Active Projects",
+      "fact4": "Community Members"
+    }
+  },
+  "BoardOfAdvisors": {
+    "title": "Board of Advisors",
+    "description": "The Board of Advisors provides strategic leadership, oversight, and guidance to Green Mongolia Hub, ensuring alignment with UN and donor standards.",
+    "watchVideo": "Watch Video",
+    "responsibilities": {
+      "responsibility1": "Strategic Leadership",
+      "description1": "Guiding the organization's long-term vision and partnerships.",
+      "responsibility2": "International Cooperation",
+      "description2": "Overseeing international cooperation and partnerships.",
+      "responsibility3": "Project Implementation",
+      "description3": "Ensuring sound project implementation and financial management.",
+      "responsibility4": "Transparency & Integrity",
+      "description4": "Upholding transparency, integrity, and responsible organizational practices."
+    },
+    "facts": {
+      "fact1": "Board Members",
+      "fact2": "Years of Experience"
+    }
+  },
+  "Careers": {
+    "title": "Careers",
+    "description": "Join Green Mongolia Hub and contribute to sustainable land management, community empowerment, and environmental protection in Mongolia.",
+    "openPositions": "Open Positions",
+    "positionsDescription": "We are looking for passionate individuals to join our team and make a difference in Mongolia's environmental future.",
+    "positions": {
+      "position1": {
+        "title": "SLM Technical Expert",
+        "description": "Expert in sustainable land management practices and WOCAT methodologies."
+      },
+      "position2": {
+        "title": "Community Engagement Specialist",
+        "description": "Specialist in community capacity building and participatory approaches."
+      },
+      "position3": {
+        "title": "Project Coordinator",
+        "description": "Coordinate field projects and manage stakeholder relationships."
+      },
+      "position4": {
+        "title": "MEL Specialist",
+        "description": "Monitoring, Evaluation, and Learning specialist for project impact assessment."
+      }
+    },
+    "whyJoin": "Why Join Us",
+    "whyJoinDescription": "Green Mongolia Hub offers a dynamic work environment with opportunities for professional growth and meaningful impact.",
+    "benefits": {
+      "benefit1": "Work on impactful environmental projects",
+      "benefit2": "Collaborate with international networks",
+      "benefit3": "Professional development opportunities",
+      "benefit4": "Flexible project-based structure"
+    }
   },
   "UNPartners": {
     "title": "UNCCD Partnership",
@@ -95,6 +260,7 @@
     "title": "Billion Tree Fund Partnership",
     "lead": "Green Mongolia Hub, an accredited civil society organization under the United Nations Convention to Combat Desertification (UNCCD), has entered into a Memorandum of Understanding (MoU) with the Billion Tree Fund.",
     "website": "Billion Tree Fund Website:",
+    "websiteUrl": "https://billiontree.mn/content/detail/158",
     "partnershipDetails": "Partnership Details",
     "partnershipDesc": "The Memorandum of Understanding was signed by:",
     "signatory1": "Ms. B. Bayarmaa, Executive Director of the Billion Tree Fund",
@@ -214,5 +380,647 @@
     "climateResilience": "Climate Resilience",
     "climateResilienceDesc": "Build resilience to drought and climate change",
     "readyToDonate": "Ready to Make a Difference?"
+  },
+  "Governance": {
+    "organizationalModel": {
+      "title": "Organizational Model",
+      "description": "Green Mongolia Hub operates through a core management unit supported by a flexible, project-based human resource model. This approach—commonly used by international technical assistance and UN-supported programmes—ensures transparency and accountability, cost efficiency, and access to high-quality national and international expertise.",
+      "advantages": "This approach ensures:",
+      "advantage1": "Transparency and accountability",
+      "advantage2": "Cost efficiency",
+      "advantage3": "Access to high-quality national and international expertise",
+      "advantage4": "Scalability according to project size and complexity"
+    },
+    "boardOfDirectors": {
+      "title": "Board of Directors",
+      "description": "The Board of Directors provides strategic leadership and oversight, with particular responsibility for:",
+      "responsibilities": "Key Responsibilities:",
+      "responsibility1": "Guiding the organization's long-term vision and partnerships",
+      "responsibility2": "Overseeing international cooperation",
+      "responsibility3": "Ensuring sound project implementation",
+      "responsibility4": "Supervising financial management and risk control",
+      "responsibility5": "Upholding transparency, integrity, and responsible organizational practices",
+      "role": "The Board plays a key role in maintaining Green Mongolia Hub's credibility and alignment with UN and donor standards."
+    },
+    "managementCapacity": {
+      "title": "Management and Operational Capacity",
+      "description": "Green Mongolia Hub applies a lean core management structure combined with a project-based human resource model, widely used by UN agencies and international technical assistance programmes.",
+      "modelEnsures": "This model ensures:",
+      "ensure1": "Cost-effective operations",
+      "ensure2": "Scalability according to project size and complexity",
+      "ensure3": "Access to specialized expertise without long-term overheads",
+      "ensure4": "Clear contractual accountability for deliverables",
+      "coreUnitResponsibilities": "The core management unit is responsible for:",
+      "responsibility1": "Project coordination and administration",
+      "responsibility2": "Donor liaison and reporting",
+      "responsibility3": "Financial management and documentation",
+      "responsibility4": "Compliance with contractual and fiduciary obligations"
+    },
+    "financialManagement": {
+      "title": "Financial Management and Procurement",
+      "description": "Green Mongolia Hub applies transparent budgeting and financial reporting procedures:",
+      "point1": "Outsources accounting and financial services to qualified professional providers",
+      "point2": "Maintains clear documentation of expenditures, contracts, and deliverables",
+      "point3": "Engages consultants and service providers through documented contracting processes appropriate to project requirements",
+      "point4": "Ensures compliance with GEF and UNDP fiduciary expectations",
+      "compliance": "These arrangements support compliance with GEF and UNDP fiduciary expectations and provide a foundation for further strengthening in line with GCF requirements as project scale increases."
+    },
+    "technicalCapacity": {
+      "title": "Technical and Human Resource Capacity",
+      "description": "Green Mongolia Hub mobilizes multidisciplinary expertise through contracted specialists and consultants, including:",
+      "specialists": "Specialists and Consultants:",
+      "specialist1": "Sustainable Land Management (SLM) and WOCAT Technical Experts",
+      "specialist2": "Rangeland Ecology and Pasture Restoration Specialists",
+      "specialist3": "Local Project Coordinators",
+      "specialist4": "Environmental Researchers and Field Technicians",
+      "specialist5": "Financial and Accounting Services (outsourced)",
+      "specialist6": "Monitoring, Evaluation, and Learning (MEL) Specialists",
+      "specialist7": "Social, Gender, and Community Engagement Specialists",
+      "approach": "This approach ensures that project implementation is technically sound, context-specific, and aligned with international best practices."
+    },
+    "mel": {
+      "title": "Monitoring, Evaluation, and Learning (MEL)",
+      "description": "Green Mongolia Hub integrates Monitoring, Evaluation, and Learning (MEL) into project design and implementation, with emphasis on:",
+      "emphasis": "Key Focus Areas:",
+      "emphasis1": "Results-based management",
+      "emphasis2": "Documentation of field-level outcomes",
+      "emphasis3": "Learning and adaptive management",
+      "emphasis4": "Alignment with UNCCD, LDN, and SLM indicators where applicable",
+      "specialists": "MEL specialists are engaged on a project basis to ensure methodological rigor and compliance with donor reporting requirements."
+    },
+    "environmentalSocial": {
+      "title": "Environmental and Social Considerations",
+      "description": "Green Mongolia Hub's work prioritizes:",
+      "priorities": "Core Priorities:",
+      "priority1": "Community-based approaches",
+      "priority2": "Participation of herders, women, youth, and local stakeholders",
+      "priority3": "Alignment with principles of social inclusion and equity",
+      "integration": "Environmental and social considerations are integrated into project planning and implementation in line with UNCCD, GEF, and UNDP good practice, with scope for further formalization as project scale and donor requirements evolve."
+    },
+    "internationalAdvisory": {
+      "title": "International Advisory and Partnership Capacity",
+      "description": "Green Mongolia Hub is supported by a network of international advisers and technical experts who provide:",
+      "provides": "Support Services:",
+      "provide1": "Advisory input to project and programme design",
+      "provide2": "Technical review and quality assurance",
+      "provide3": "Capacity development support",
+      "provide4": "Alignment with international frameworks and methodologies",
+      "strengthens": "This strengthens institutional credibility and supports delivery of evidence-based, internationally aligned interventions."
+    },
+    "institutionalPositioning": {
+      "title": "Institutional Positioning for Donor Engagement",
+      "description": "Through its governance framework, operational model, and international accreditation, Green Mongolia Hub is positioned to function as:",
+      "positioned": "Key Functions:",
+      "position1": "An implementing partner for UN agencies and donor-funded programmes",
+      "position2": "A technical and community interface for land restoration and LDN initiatives",
+      "position3": "A CSO partner supporting policy dialogue, field implementation, and knowledge exchange",
+      "commitment": "The organization remains committed to continuous institutional strengthening in line with evolving GEF, GCF, and UNDP capacity and fiduciary requirements."
+    }
+  },
+  "GMHBoard": {
+    "title": "GMH Board",
+    "introduction": "Green Mongolia Hub NGO was established in 2024 as a legally registered civil society organization under the laws of Mongolia.",
+    "organizationIs": "The organization is:",
+    "accredited": "Accredited to the United Nations Convention to Combat Desertification (UNCCD)",
+    "wocatMember": "A member of the WOCAT Global Sustainable Land Management Network",
+    "drynetMember": "A member of the Drynet Network for Land Degradation Neutrality (LDN)",
+    "membershipsDemonstrate": "These memberships demonstrate alignment with UN-recognized technical frameworks, global knowledge platforms, and civil society coordination mechanisms relevant to GEF, GCF, and UNDP programming.",
+    "boardOfDirectors": {
+      "title": "Board of Directors (6 Members)",
+      "description": "The Board of Directors serves as the organization's highest governing and oversight body, with responsibility for:",
+      "responsibilities": "Key Responsibilities:",
+      "responsibility1": "Strategic direction and policy guidance",
+      "responsibility2": "Oversight of international cooperation and partnerships",
+      "responsibility3": "Approval and supervision of programmes and projects",
+      "responsibility4": "Financial oversight, internal controls, and risk management",
+      "responsibility5": "Compliance with legal, fiduciary, and donor requirements",
+      "separation": "The Board ensures separation between governance and management functions, consistent with UNDP and GEF fiduciary standards.",
+      "principles": "The Board upholds principles of transparency, integrity, and accountability."
+    },
+    "managementTeam": {
+      "title": "Management, Technical Team & Expertise",
+      "description": "Green Mongolia Hub maintains a lean core team and scales its operations through contracted specialists, consultants, and volunteers according to project needs.",
+      "specialists": "Project Specialists and Consultants:",
+      "specialist1": "Sustainable Land Management (SLM) and WOCAT Technical Experts",
+      "specialist2": "Rangeland Ecology and Pasture Restoration Specialists",
+      "specialist3": "Local Project Coordinators",
+      "specialist4": "Environmental Researchers and Field Technicians",
+      "specialist5": "Financial and Accounting Services (outsourced)",
+      "specialist6": "Monitoring, Evaluation, and Learning (MEL) Specialists",
+      "specialist7": "Social, Gender, and Community Engagement Specialists",
+      "specialist8": "International Expert Support"
+    },
+    "internationalSupport": {
+      "title": "International Expert Support",
+      "description": "Green Mongolia Hub is supported by a global network of senior advisers and technical experts who contribute to:",
+      "contributes": "Key Contributions:",
+      "contribute1": "Project and programme design",
+      "contribute2": "Capacity development and training",
+      "contribute3": "Technical supervision and quality assurance",
+      "contribute4": "Alignment with international best practices",
+      "enables": "This governance and management structure enables Green Mongolia Hub to deliver credible, accountable, and impact-oriented interventions while remaining adaptable to evolving project and partnership needs."
+    }
+  },
+  "CommitteesPanels": {
+    "title": "Committees, Panels & Groups",
+    "description": "Green Mongolia Hub maintains various committees, panels, and working groups to support its governance and operations. These structures ensure effective coordination, technical oversight, and community engagement across all organizational activities.",
+    "technicalWorkingGroups": {
+      "title": "Technical Working Groups",
+      "description": "Green Mongolia Hub participates in and establishes technical working groups to address specific thematic areas and prepare for major international events.",
+      "cop17Groups": "UNCCD COP17 Technical Sub-Working Groups",
+      "cop17Description": "As part of Mongolia's preparation for hosting UNCCD COP17 in 2026, Green Mongolia Hub participates in several technical sub-working groups:",
+      "group1": "Land Degradation Neutrality (LDN) implementation and monitoring",
+      "group2": "Drought resilience and risk management",
+      "group3": "Sustainable land management and restoration practices",
+      "nationalCarbon": "National Carbon Market Working Group",
+      "nationalCarbonDesc": "Green Mongolia Hub is a member of Mongolia's National Carbon Market Working Group, contributing expertise on land-based carbon solutions and sustainable land management approaches."
+    },
+    "advisoryPanels": {
+      "title": "Advisory Panels",
+      "description": "Advisory panels provide strategic guidance and technical expertise to support Green Mongolia Hub's mission and operations.",
+      "internationalAdvisory": "International Advisory Network",
+      "internationalAdvisoryDesc": "A global network of senior advisers and technical experts provides guidance on project design, capacity development, technical supervision, and alignment with international best practices.",
+      "technicalExpert": "Technical Expert Panel",
+      "technicalExpertDesc": "Specialized experts in sustainable land management, rangeland ecology, environmental research, and community engagement provide technical oversight and quality assurance for projects and programs."
+    },
+    "projectCommittees": {
+      "title": "Project Committees",
+      "description": "Project-specific committees oversee implementation, ensure quality, and facilitate stakeholder engagement:",
+      "committee1": "Project Steering Committees - Provide strategic direction and oversight for major projects",
+      "committee2": "Technical Review Committees - Ensure technical quality and alignment with best practices",
+      "committee3": "Community Advisory Committees - Facilitate local community participation and feedback",
+      "committee4": "Monitoring and Evaluation Committees - Oversee MEL activities and learning processes"
+    },
+    "communityGroups": {
+      "title": "Community Engagement Groups",
+      "description": "Green Mongolia Hub works closely with various community-based groups to ensure inclusive participation and local ownership:",
+      "types": "Community Groups:",
+      "type1": "Herders' Associations - Representing pastoral communities and rangeland users",
+      "type2": "Women's Groups - Ensuring gender-inclusive participation and empowerment",
+      "type3": "Youth Groups - Engaging young people in environmental stewardship",
+      "type4": "Local Cooperatives - Supporting community-based resource management",
+      "role": "These groups play a crucial role in ensuring that Green Mongolia Hub's work is rooted in field realities and aligned with community needs and priorities."
+    }
+  },
+  "PoliciesStrategies": {
+    "title": "Policies & Strategies",
+    "description": "Green Mongolia Hub operates under a comprehensive set of policies and strategies aligned with international best practices and donor requirements. These frameworks ensure transparency, accountability, and effective program delivery.",
+    "financialPolicies": {
+      "title": "Financial Management Policies",
+      "description": "Green Mongolia Hub maintains robust financial management policies to ensure transparency, accountability, and compliance with donor requirements:",
+      "keyPolicies": "Key Policies:",
+      "policy1": "Transparent budgeting and financial reporting procedures",
+      "policy2": "Outsourced accounting services to qualified professional providers",
+      "policy3": "Clear documentation of expenditures, contracts, and deliverables",
+      "policy4": "Documented contracting processes for consultants and service providers",
+      "compliance": "These policies ensure compliance with GEF, UNDP, and GCF fiduciary standards and provide a foundation for institutional strengthening."
+    },
+    "environmentalSocialPolicies": {
+      "title": "Environmental and Social Policies",
+      "description": "Green Mongolia Hub prioritizes environmental sustainability and social inclusion in all its activities:",
+      "corePrinciples": "Core Principles:",
+      "principle1": "Community-based approaches - Ensuring local ownership and participation",
+      "principle2": "Inclusive participation - Engaging herders, women, youth, and vulnerable groups",
+      "principle3": "Social equity - Promoting principles of social inclusion and equal access",
+      "principle4": "Environmental protection - Integrating environmental considerations into all projects",
+      "alignment": "These policies are aligned with UNCCD, GEF, and UNDP good practice and are continuously strengthened as project scale and donor requirements evolve."
+    },
+    "strategicFramework": {
+      "title": "Strategic Framework",
+      "description": "Green Mongolia Hub's strategic framework guides organizational priorities and programmatic focus:",
+      "priorities": "Strategic Priorities:",
+      "priority1": "Sustainable Land Management (SLM) - Localizing and implementing international best practices",
+      "priority2": "Land Restoration - Supporting degraded land rehabilitation and ecosystem recovery",
+      "priority3": "Capacity Building - Strengthening local communities, herders, women, and youth",
+      "priority4": "Policy Advocacy - Promoting Mongolia's good practices through global platforms"
+    },
+    "compliance": {
+      "title": "Compliance and Accountability",
+      "description": "Green Mongolia Hub maintains strict compliance with legal, fiduciary, and donor requirements:",
+      "standards": "Compliance Standards:",
+      "standard1": "Legal compliance - Adherence to Mongolian laws and regulations",
+      "standard2": "Fiduciary standards - Meeting UNDP and GEF financial accountability requirements",
+      "standard3": "Donor requirements - Compliance with specific donor guidelines and reporting",
+      "standard4": "International standards - Alignment with UNCCD, UNFCCC, and other relevant frameworks"
+    },
+    "qualityAssurance": {
+      "title": "Quality Assurance",
+      "description": "Quality assurance measures ensure that all projects and programs meet high standards:",
+      "measures": "Quality Measures:",
+      "measure1": "Technical review and supervision by qualified experts",
+      "measure2": "Monitoring, Evaluation, and Learning (MEL) integration throughout project lifecycle",
+      "measure3": "Results-based management and documentation of field-level outcomes",
+      "measure4": "Alignment with international best practices and methodologies"
+    }
+  },
+  "GMHProgramsProjects": {
+    "title": "GMH Programs & Projects",
+    "subTitle": "Our Portfolio",
+    "description": "Green Mongolia Hub implements a diverse portfolio of programs and projects focused on sustainable land management, capacity building, climate technologies, and climate finance.",
+    "ongoingProjects": {
+      "title": "Ongoing Projects",
+      "description": "Currently active projects that are being implemented across Mongolia.",
+      "fields": {
+        "text": "Project Brief Description",
+        "picture": "Picture",
+        "videos": "Video Materials",
+        "downloadLink": "Download Link"
+      }
+    },
+    "completedProjects": {
+      "title": "Completed Projects",
+      "description": "Successfully completed projects that have made significant contributions to land restoration and community development.",
+      "fields": {
+        "text": "Project Brief Description",
+        "picture": "Picture",
+        "videos": "Video Materials",
+        "downloadLink": "Download Link"
+      }
+    },
+    "capacityBuilding": {
+      "title": "Capacity Building Activities",
+      "description": "Training and capacity building programs for local communities, herders, women, and youth.",
+      "fields": {
+        "text": "Activity Description",
+        "picture": "Picture",
+        "videos": "Video Materials",
+        "downloadLink": "Download Link"
+      }
+    },
+    "climateTechnologies": {
+      "title": "Climate Technologies",
+      "description": "Innovative climate technologies and solutions for sustainable land management and environmental protection.",
+      "fields": {
+        "text": "Content Description",
+        "picture": "Picture",
+        "videos": "Video Materials",
+        "downloadLink": "Download Link"
+      }
+    },
+    "climateFinance": {
+      "title": "Climate Finance",
+      "description": "Climate finance initiatives and funding mechanisms to support sustainable land management projects.",
+      "fields": {
+        "text": "Content Description",
+        "picture": "Picture",
+        "videos": "Video Materials",
+        "downloadLink": "Download Link"
+      }
+    }
+  },
+  "GMHInitiatives": {
+    "title": "GMH Initiatives",
+    "subTitle": "Innovative Solutions",
+    "subtitle": "Innovative projects combining ecological restoration with renewable energy solutions",
+    "agrivoltaics": {
+      "title": "Agrivoltaics Project",
+      "description": "An innovative project combining agriculture and solar energy in the Gobi region of Mongolia, inspired by the Kubuqi Model.",
+      "goal": {
+        "title": "Goal & Vision",
+        "description": "To integrate solar energy solutions with ecological restoration in order to develop climate-resilient and adaptable local communities."
+      },
+      "outcomes": {
+        "title": "Expected Outcomes",
+        "outcome1": "Combat desertification and land degradation, while restoring and increasing vegetation cover",
+        "outcome2": "Revive biodiversity and enhance ecosystem",
+        "outcome3": "Improve community livelihoods by supporting irrigation systems, greenhouse farming, and livestock production through renewable energy",
+        "outcome4": "Power rural (agro) production and processing sectors with clean energy"
+      }
+    },
+    "kubuqiModel": {
+      "title": "The Kubuqi Model",
+      "description": "A globally recognized model integrating ecological restoration, green industry, and resilient community livelihoods through renewable energy innovation.",
+      "achievements": {
+        "restored": "~18,000 km²",
+        "restoredDesc": "Restored degraded desert land",
+        "energy": "2,200 MW",
+        "energyDesc": "Integrated solar & wind renewable energy system"
+      },
+      "pillars": {
+        "title": "Three Core Pillars",
+        "pillar1": {
+          "title": "Ecological Restoration & Environmental Protection",
+          "desc1": "Reducing desertification, land degradation, and soil erosion",
+          "desc2": "Restoring vegetation cover and maintaining ecosystem balance"
+        },
+        "pillar2": {
+          "title": "Renewable Energy & Green Economy",
+          "desc1": "Leveraging 2,200 MW of solar and wind power systems",
+          "desc2": "Supporting the development of irrigation systems, greenhouse farming, and animal husbandry",
+          "desc3": "Driving sustainable economic growth in the region"
+        },
+        "pillar3": {
+          "title": "Community Engagement & Livelihood Improvement",
+          "desc1": "Ensuring active participation of local communities",
+          "desc2": "Creating employment and income-generating opportunities",
+          "desc3": "Establishing resilient and sustainable livelihoods"
+        }
+      },
+      "summary": {
+        "title": "Kubuqi Ecological Climate Restoration",
+        "description": "A combined model of ecological restoration, industry, and people's livelihoods."
+      }
+    },
+    "phases": {
+      "title": "Project Phases",
+      "initial": {
+        "title": "Initial Phase",
+        "description": "50–150 ha of land restoration + 1–5 MW Agro-PV system. Prototype demonstration site in the Gobi region."
+      },
+      "scaleUp": {
+        "title": "Scale-Up Phase",
+        "description": "Expansion to multiple sites with increased land restoration and solar capacity. If the pilot proves successful, it will be scaled into a national model, similar to the Kubuqi expansion pathway."
+      }
+    },
+    "vision": {
+      "title": "Building a Replicable Future",
+      "description": "Restore the Land • Empower Communities • Build a Legacy - Building a replicable, climate-smart future for Mongolia's drylands."
+    }
+  },
+  "NationalProgramsProjects": {
+    "title": "National Programs & Projects",
+    "subTitle": "National Collaboration",
+    "description": "Collaborative programs and projects implemented in partnership with national and local institutions across Mongolia.",
+    "overview": {
+      "title": "Overview",
+      "description": "Green Mongolia Hub works closely with national partners including GIZ Mongolia, STREAM+ program, forestry units, and local administrations to implement sustainable land management initiatives."
+    },
+    "vision2030": {
+      "title": "Vision 2030 Framework",
+      "description": "Mongolia's national programmes are guided by Vision 2030, the country's long-term development policy framework, which emphasizes environmental sustainability, climate resilience, responsible natural resource management, and inclusive economic growth.",
+      "framework": "Vision 2030 provides the long-term policy direction for sustainable land, water, and ecosystem management.",
+      "billionTrees": "One Billion Trees Initiative",
+      "billionTreesDesc": "Through Vision 2030 and the One Billion Trees initiative, Mongolia positions land restoration and sustainable land management not as stand-alone activities, but as long-term, nationally anchored processes that integrate land restoration, sustainable land management, afforestation, and agroforestry.",
+      "alignment": "Green Mongolia Hub's work aligns with Vision 2030 priorities, UNCCD commitments, and Mongolia's NDC 3 objectives, contributing to reducing land degradation, drought, and climate risks while strengthening rangeland and water security through community-based approaches."
+    },
+    "keyAreas": {
+      "title": "Key Areas of Work",
+      "area1": {
+        "title": "Rangeland & Water Resource Management",
+        "description": "Training programs focused on sustainable rangeland and water resource management practices."
+      },
+      "area2": {
+        "title": "Community Engagement",
+        "description": "Meetings and consultations with herder groups, women's groups, and youth leaders to ensure local participation."
+      },
+      "area3": {
+        "title": "Environmental Protection",
+        "description": "Volunteer-based environmental protection activities, environmental education, and impact assessments."
+      },
+      "area4": {
+        "title": "Field-Based Implementation",
+        "description": "All activities are grounded in real field conditions and aligned with local community needs and priorities."
+      }
+    },
+    "partners": {
+      "title": "Key Partners",
+      "description": "Green Mongolia Hub collaborates with diverse national and local partners:",
+      "partner1": "GIZ Mongolia",
+      "partner2": "STREAM+ Program",
+      "partner3": "Forestry Units",
+      "partner4": "Local Administrations"
+    }
+  },
+  "UNProgramsProjects": {
+    "title": "UN Programs & Projects",
+    "subTitle": "International Partnerships",
+    "description": "Programs and projects implemented in partnership with United Nations agencies and international organizations.",
+    "overview": {
+      "title": "Overview",
+      "description": "Green Mongolia Hub is accredited to the United Nations Convention to Combat Desertification (UNCCD) and collaborates with various UN agencies and international networks."
+    },
+    "partnerships": {
+      "title": "UN Partnerships",
+      "partnership1": {
+        "title": "UNCCD Accreditation",
+        "description": "Accredited civil society organization under the United Nations Convention to Combat Desertification, enabling participation in global policy processes."
+      },
+      "partnership2": {
+        "title": "WOCAT Network",
+        "description": "Official Regional cluster member of WOCAT, the global network endorsed by UNCCD, providing access to over 2,400 sustainable land management practices."
+      },
+      "partnership3": {
+        "title": "Drynet Network",
+        "description": "Member of the Drynet Network for Land Degradation Neutrality (LDN), promoting best practices in land restoration."
+      },
+      "partnership4": {
+        "title": "COP17 Hosting",
+        "description": "Supporting the organization of COP17 in Ulaanbaatar in August 2026, bringing together 15,000+ delegates from 197+ countries."
+      }
+    },
+    "activities": {
+      "title": "Key Activities",
+      "activity1": {
+        "title": "Best Practice Documentation",
+        "description": "Localizing, field implementing, and documenting international SLM best practices, particularly from WOCAT."
+      },
+      "activity2": {
+        "title": "Capacity Building",
+        "description": "Training, hands-on demonstrations, and participatory monitoring for local communities, herders, women, and youth."
+      },
+      "activity3": {
+        "title": "Multi-Stakeholder Cooperation",
+        "description": "Supporting cooperation in land restoration, ecosystem protection, and rangeland management."
+      },
+      "activity4": {
+        "title": "Global Platform Engagement",
+        "description": "Promoting Mongolia's good practices through global platforms such as UNCCD, WOCAT, and Drynet."
+      }
+    },
+    "impact": {
+      "title": "Impact",
+      "description": "Through these partnerships and activities, Green Mongolia Hub contributes to global efforts in combating desertification, promoting sustainable land management, and building climate resilience in Mongolia and beyond."
+    }
+  },
+  "Footer": {
+    "description": "Green Mongolia Hub NGO was established in 2024 as a legally registered civil society organization under the laws of Mongolia. The organization is accredited to the United Nations Convention to Combat Desertification (UNCCD) and is a member of both the WOCAT Global SLM Network and the Drynet Network for Land Degradation Neutrality (LDN).",
+    "emailPlaceholder": "Your Email",
+    "subscribeButton": "Go",
+    "subscribeSuccess": "Thanks For Subscribe",
+    "navigation": {
+      "about": "About",
+      "aboutGmh": "About GMH",
+      "board": "Board of Advisors",
+      "governance": "Governance",
+      "careers": "Careers",
+      "gmhBoard": "GMH Board",
+      "committees": "Committees & Panels",
+      "policies": "Policies",
+      "partners": "Partners",
+      "localPartners": "Local Partners",
+      "unPartners": "UN Partners",
+      "privatePartners": "Private Partners",
+      "donate": "Donate",
+      "projects": "Projects",
+      "nationalPrograms": "National Programs",
+      "unPrograms": "UN Programs",
+      "gmhPrograms": "GMH Programs",
+      "initiatives": "Initiatives"
+    },
+    "recentPosts": {
+      "title": "Recent Posts",
+      "loading": "Loading...",
+      "error": "Unable to load posts",
+      "noPosts": "No recent posts"
+    },
+    "contactInfo": {
+      "title": "Contact Info",
+      "address": "Address",
+      "addressValue": "Floor 5, Suite 502, GB Plaza, Beijing Street, 11th microdistrict, Khoroo 8, Sukhbaatar district, Ulaanbaatar, 14240, Mongolia",
+      "email": "Email",
+      "emailValue": "mandukhai@green-mongolia.com",
+      "phone": "Phone",
+      "phoneValue": "8910-0044",
+      "website": "Website",
+      "websiteValue": "http://www.green-mongolia.com"
+    }
+  },
+  "Contact": {
+    "form": {
+      "subTitle": "Have Questions?",
+      "title": "Send us a message",
+      "namePlaceholder": "Name",
+      "emailPlaceholder": "Email",
+      "phonePlaceholder": "Phone",
+      "messagePlaceholder": "Tell us about your inquiry or message",
+      "submitButton": "Get in Touch",
+      "sending": "Sending...",
+      "validationError": "Please fill in all required fields",
+      "successMessage": "Thanks For Your Message! We'll get back to you soon.",
+      "errorMessage": "Failed to send message. Please try again."
+    },
+    "info": {
+      "title": "Contact",
+      "titleSuffix": "Information",
+      "description": "Get in touch with Green Mongolia Hub. We're here to help with questions about sustainable land management, capacity building, and our programs.",
+      "phoneTitle": "Phone",
+      "addressTitle": "Our Location",
+      "addressValue": "Floor 5, Suite 502, GB Plaza, Beijing Street, 11th microdistrict, Khoroo 8, Sukhbaatar district, Ulaanbaatar, 14240, Mongolia",
+      "emailTitle": "Official Email"
+    }
+  },
+    "copyright": "© Copyright {year}. All Rights Reserved by Green Mongolia Hub"
+  },
+  "GMHDataResources": {
+    "title": "GMH Data & Resources",
+    "description": "Access to global knowledge platforms and databases for sustainable land management practices and best practices.",
+    "watchVideo": "Watch Video",
+    "platforms": {
+      "title": "Knowledge Platforms",
+      "description": "Green Mongolia Hub provides access to leading global knowledge platforms and databases for sustainable land management.",
+      "platform1": {
+        "title": "WOCAT Global SLM Database",
+        "description": "Access to over 2,400 sustainable land management practices and technologies from around the world."
+      },
+      "platform2": {
+        "title": "UNCCD Knowledge Platform",
+        "description": "Integration with UNCCD knowledge resources and best practices for combating desertification."
+      },
+      "platform3": {
+        "title": "Drynet Network Resources",
+        "description": "Access to Land Degradation Neutrality (LDN) resources and community engagement methodologies."
+      }
+    },
+    "features": {
+      "feature1": {
+        "title": "Global Database Access"
+      },
+      "feature2": {
+        "title": "Best Practices Documentation"
+      },
+      "feature3": {
+        "title": "Knowledge Sharing"
+      },
+      "feature4": {
+        "title": "Community Resources"
+      }
+    },
+    "benefits": {
+      "benefit1": {
+        "title": "Comprehensive Knowledge Base",
+        "description": "Access to thousands of documented SLM practices and technologies from global experts."
+      },
+      "benefit2": {
+        "title": "Local Application",
+        "description": "Tools and resources adapted for Mongolian conditions and field implementation."
+      },
+      "benefit3": {
+        "title": "Continuous Updates",
+        "description": "Regular updates with new practices, methodologies, and case studies from around the world."
+      }
+    },
+    "progress": {
+      "progress1": {
+        "title": "Database Coverage"
+      },
+      "progress2": {
+        "title": "Resource Accessibility"
+      }
+    }
+  },
+  "GMHPublications": {
+    "title": "GMH Publications",
+    "description": "Documentation and registration of field experiences, best practices, and project outcomes in global knowledge databases.",
+    "publications": {
+      "publication1": {
+        "title": "WOCAT Database Registration",
+        "description": "Field experiences documented and registered in WOCAT global SLM knowledge database."
+      },
+      "publication2": {
+        "title": "Project Documentation",
+        "description": "Comprehensive documentation of shelterbelt establishment, nurseries, and protection zones."
+      },
+      "publication3": {
+        "title": "Best Practices Reports",
+        "description": "Reports on successful SLM practices implemented in Mongolia."
+      },
+      "publication4": {
+        "title": "Case Studies",
+        "description": "Detailed case studies of field projects and their outcomes."
+      }
+    },
+    "benefits": {
+      "benefit1": {
+        "title": "Global Recognition",
+        "description": "Mongolian practices recognized and shared on international platforms."
+      },
+      "benefit2": {
+        "title": "Knowledge Sharing",
+        "description": "Contributing to global knowledge base while learning from others."
+      },
+      "benefit3": {
+        "title": "Documentation Standards",
+        "description": "Following international documentation standards for quality and credibility."
+      }
+    },
+    "facts": {
+      "fact1": "Documented Practices",
+      "fact2": "Published Reports"
+    }
+  },
+  "GMHToolsMethods": {
+    "title": "GMH Tools & Methods",
+    "description": "WOCAT assessment and documentation tools, evaluation systems, and methodologies for sustainable land management.",
+    "learnMore": "Learn More",
+    "tools": {
+      "tool1": {
+        "title": "WOCAT Assessment Tools",
+        "description": "Evaluation and documentation tools for assessing sustainable land management practices at local levels."
+      },
+      "tool2": {
+        "title": "WOCAT Documentation Tools",
+        "description": "Tools for documenting field experiences, best practices, and project outcomes."
+      },
+      "tool3": {
+        "title": "PRAIS & LDN Indicators",
+        "description": "Support for using tools such as WOCAT, PRAIS, and LDN indicators for land degradation assessment."
+      }
+    },
+    "methods": {
+      "method1": "Localization of WOCAT methodologies in Mongolia",
+      "method2": "Application of assessment tools at soum and community levels",
+      "method3": "Documentation and registration in global databases",
+      "method4": "Training and capacity building on tool usage"
+    }
   }
 }

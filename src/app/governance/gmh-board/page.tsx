@@ -1,23 +1,16 @@
-import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
+"use client";
+import BreadCrumbWrapper from "@/components/breadCrumb/BreadCrumbWrapper";
+import GMHBoardContent from "@/components/governance/GMHBoardContent";
 import LayoutV1 from "@/components/layouts/LayoutV1";
-import TeamV3 from "@/components/team/TeamV3";
-import TestimonialV2 from "@/components/testimonials/TestimonialV2";
 
-export const metadata = {
-    title: "GMH - GMH Board"
-};
-
-const GMHBoardPage = () => {
+export default function GMHBoardPage() {
     return (
         <>
             <LayoutV1>
-                <BreadCrumb title="GMH Board" breadCrumb="Governance / GMH Board" />
-                <TeamV3 />
-                <TestimonialV2 />
+                <BreadCrumbWrapper titleKey="gmhBoard" breadCrumbKey="governance" />
+                <GMHBoardContent />
             </LayoutV1>
         </>
     );
-};
-
-export default GMHBoardPage;
+}
 

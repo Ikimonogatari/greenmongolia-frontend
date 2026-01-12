@@ -17,11 +17,30 @@ interface DataType {
 const SingleBlogV1 = ({ blog }: { blog: DataType }) => {
     const { id, thumb, date, author, full_date, title } = blog;
 
+    // Handle image URL - can be full URL or relative path
+    const getImageSrc = () => {
+        if (!thumb) return "/assets/img/blog/default-thumb.jpg";
+        if (thumb.startsWith('http') || thumb.startsWith('/')) {
+            return thumb;
+        }
+        return `/assets/img/blog/${thumb}`;
+    };
+
+    const imageSrc = getImageSrc();
+    const isDirectusUrl = imageSrc.startsWith('http');
+
     return (
         <div className="blog-style-one">
             <div className="thumb">
                 <Link href={`/blog-single-with-sidebar/${id}`}>
-                    <Image src={`/assets/img/blog/${thumb}`} alt={title} width={900} height={600} className="h-auto" />
+                    <Image 
+                        src={imageSrc} 
+                        alt={title} 
+                        width={900} 
+                        height={600} 
+                        className="h-auto"
+                        unoptimized={isDirectusUrl}
+                    />
                 </Link>
                 <div className="date">
                     <strong>{date.day}</strong> <span>{date.month}, {date.year}</span>
@@ -31,7 +50,7 @@ const SingleBlogV1 = ({ blog }: { blog: DataType }) => {
                 <div className="meta">
                     <ul>
                         <li>
-                            <Link href="#" scroll={false}>{author}</Link>
+                            <Link href="#" scroll={false}>{author || "Admin"}</Link>
                         </li>
                         <li>{full_date}</li>
                     </ul>

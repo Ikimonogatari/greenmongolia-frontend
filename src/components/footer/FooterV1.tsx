@@ -1,134 +1,462 @@
-"use client"
+"use client";
+import { useGetArticlesQuery } from "@/store/api/articlesApi";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { FaChevronDown, FaPaperPlane } from "react-icons/fa";
 import { toast } from "react-toastify";
-import BlogV1Data from "@/assets/jsonData/blog/BlogV1Data.json"
 import FooterRecentPost from "./FooterRecentPost";
 
 interface FormEventHandler {
-    (event: React.FormEvent<HTMLFormElement>): void;
+  (event: React.FormEvent<HTMLFormElement>): void;
 }
 
 const FooterV1 = () => {
+  const t = useTranslations("Footer");
+  const { data: articlesData, isLoading, error } = useGetArticlesQuery();
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-    const handleForm: FormEventHandler = (event) => {
-        event.preventDefault()
-        const form = event.target as HTMLFormElement;
-        form.reset()
-        toast.success("Thanks For Subscribe")
-    }
+  const toggleDropdown = (section: string) => {
+    setOpenDropdown((prev) => (prev === section ? null : section));
+  };
 
-    return (
-        <>
-            <footer className="bg-dark text-light" style={{ backgroundImage: 'url(/assets/img/shape/8.png)' }}>
-                <div className="container">
-                    <div className="f-items default-padding">
-                        <div className="row">
+  const handleForm: FormEventHandler = (event) => {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    form.reset();
+    toast.success(t("subscribeSuccess"));
+  };
 
-                            <div className="col-lg-4 col-md-6 item">
-                                <div className="footer-item about">
-                                    <Link href="/">
-                                        <Image className="logo w-auto" src="/assets/img/logo-light.png" alt="Logo" width={790} height={240} />
-                                    </Link>
-                                    <p>
-                                        Happen active county. Winding morning ambition shyness evident to poor. Because elderly new to the point to main success.
-                                    </p>
-                                    <form onSubmit={handleForm}>
-                                        <input type="email" placeholder="Your Email" className="form-control" name="email" autoComplete="off" required />
-                                        <button type="submit"> Go</button>
-                                    </form>
-                                </div>
-                            </div>
+  // Transform articles for footer display (2 most recent)
+  const recentArticles = articlesData?.data
+    ? articlesData.data.slice(0, 2).map((article) => {
+        // Format date
+        const date = article.date_created || article.date_updated;
+        let full_date = "";
+        if (date) {
+          const dateObj = new Date(date);
+          full_date = `${dateObj
+            .getDate()
+            .toString()
+            .padStart(2, "0")} ${dateObj.toLocaleString("en-US", {
+            month: "short",
+          })}, ${dateObj.getFullYear()}`;
+        }
 
-                            <div className="col-lg-2 col-md-6 item">
-                                <div className="footer-item link">
-                                    <h4 className="widget-title">Explore</h4>
-                                    <ul>
-                                        <li>
-                                            <Link href="/about-us">About Us</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/team">Meet Our Team</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/blog-single-with-sidebar/1">News & Media</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/services">Services</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/contact">Contact Us</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/team-details/1">Volunteers</Link>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+        // Handle image URL - same logic as transformArticleToBlog
+        let thumb = article.thumb;
+        if (article.image) {
+          if (typeof article.image === "string") {
+            thumb = article.image;
+          } else if (
+            article.image &&
+            typeof article.image === "object" &&
+            article.image.filename_download
+          ) {
+            // If it's a Directus file object, construct the URL
+            const directusUrl =
+              process.env.NEXT_PUBLIC_DIRECTUS_URL || "http://localhost:8055";
+            // Ensure proper URL format for Directus assets
+            if (article.image.id && article.image.filename_download) {
+              thumb = `${directusUrl}/assets/${article.image.id}/${article.image.filename_download}`;
+            } else if (article.image.filename_download) {
+              // Fallback if id is missing
+              thumb = `${directusUrl}/assets/${article.image.filename_download}`;
+            }
+          }
+        }
 
-                            <div className="col-lg-3 col-md-6 item">
-                                <div className="footer-item recent-post">
-                                    <h4 className="widget-title">Recent Posts</h4>
-                                    <ul>
-                                        {BlogV1Data.slice(1, 3).map(blog =>
-                                            <FooterRecentPost blog={blog} key={blog.id} />
-                                        )}
-                                    </ul>
-                                </div>
-                            </div>
+        return {
+          id: article.id,
+          title: article.title,
+          full_date: full_date,
+          thumb: thumb || "/assets/img/blog/default-thumb.jpg",
+        };
+      })
+    : [];
 
-                            <div className="col-lg-3 col-md-6 item">
-                                <div className="footer-item contact">
-                                    <h4 className="widget-title">Contact Info</h4>
-                                    <ul>
-                                        <li>
-                                            <div className="icon">
-                                                <i className="fas fa-home" />
-                                            </div>
-                                            <div className="content">
-                                                <strong>Address:</strong>
-                                                5919 Trussville Crossings Pkwy, Birmingham
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="icon">
-                                                <i className="fas fa-envelope" />
-                                            </div>
-                                            <div className="content">
-                                                <strong>Email:</strong>
-                                                <a href="mailto:info@validtheme.com">info@validtheme.com</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="icon">
-                                                <i className="fas fa-phone" />
-                                            </div>
-                                            <div className="content">
-                                                <strong>Phone:</strong>
-                                                <a href="tel:2151234567">+123 34598768</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div className="footer-bottom text-center">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <p>&copy; Copyright {(new Date().getFullYear())}. All Rights Reserved by <a href="https://themeforest.net/user/validthemes" target="_blank">validthemes</a></p>
-                            </div>
-                        </div>
-                    </div>
+  return (
+    <>
+      <footer
+        className="bg-dark text-light"
+        style={{ backgroundImage: "url(/assets/img/shape/8.png)" }}
+      >
+        <div className="container">
+          <div className="f-items default-padding">
+            <div className="row">
+              <div className="col-lg-4 col-md-6 item">
+                <div className="footer-item about">
+                  <Link href="/">
+                    <Image
+                      className="logo w-auto"
+                      src="/assets/img/logo-light.png"
+                      alt="Logo"
+                      width={790}
+                      height={240}
+                    />
+                  </Link>
+                  <p>{t("description")}</p>
+                  <form onSubmit={handleForm}>
+                    <input
+                      type="email"
+                      placeholder={t("emailPlaceholder")}
+                      className="form-control"
+                      name="email"
+                      autoComplete="off"
+                      required
+                    />
+                    <button type="submit" aria-label={t("subscribeButton")}>
+                      <FaPaperPlane />
+                    </button>
+                  </form>
                 </div>
-                <div className="shape-right-bottom">
-                    <Image src="/assets/img/shape/7.png" alt="Image Not Found" width={1000} height={500} />
+              </div>
+
+              <div className="col-lg-2 col-md-6 item">
+                <div className="footer-item link footer-dropdown-column">
+                  <h4
+                    className="widget-title footer-dropdown-toggle"
+                    onClick={() => toggleDropdown("about")}
+                  >
+                    {t("navigation.about")}
+                    <FaChevronDown
+                      className={openDropdown === "about" ? "rotated" : ""}
+                    />
+                  </h4>
+                  <ul
+                    className={`footer-dropdown-menu ${
+                      openDropdown === "about" ? "show" : ""
+                    }`}
+                  >
+                    <li>
+                      <Link href="/about-us">{t("navigation.aboutGmh")}</Link>
+                    </li>
+                    <li>
+                      <Link href="/board-of-advisors">
+                        {t("navigation.board")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/governance">
+                        {t("navigation.governance")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/careers">{t("navigation.careers")}</Link>
+                    </li>
+                  </ul>
+
+                  <h4
+                    className="widget-title footer-dropdown-toggle"
+                    onClick={() => toggleDropdown("governance")}
+                  >
+                    {t("navigation.governance")}
+                    <FaChevronDown
+                      className={openDropdown === "governance" ? "rotated" : ""}
+                    />
+                  </h4>
+                  <ul
+                    className={`footer-dropdown-menu ${
+                      openDropdown === "governance" ? "show" : ""
+                    }`}
+                  >
+                    <li>
+                      <Link href="/governance/gmh-board">
+                        {t("navigation.gmhBoard")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/governance/committees-panels-groups">
+                        {t("navigation.committees")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/governance/policies-strategies">
+                        {t("navigation.policies")}
+                      </Link>
+                    </li>
+                  </ul>
+
+                  <h4
+                    className="widget-title footer-dropdown-toggle"
+                    onClick={() => toggleDropdown("partners")}
+                  >
+                    {t("navigation.partners")}
+                    <FaChevronDown
+                      className={openDropdown === "partners" ? "rotated" : ""}
+                    />
+                  </h4>
+                  <ul
+                    className={`footer-dropdown-menu ${
+                      openDropdown === "partners" ? "show" : ""
+                    }`}
+                  >
+                    <li>
+                      <Link href="/partners/local-partners">
+                        {t("navigation.localPartners")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/partners/un-partners">
+                        {t("navigation.unPartners")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/partners/private-partners">
+                        {t("navigation.privatePartners")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/partners/donate">
+                        {t("navigation.donate")}
+                      </Link>
+                    </li>
+                  </ul>
+
+                  <h4
+                    className="widget-title footer-dropdown-toggle"
+                    onClick={() => toggleDropdown("projects")}
+                  >
+                    {t("navigation.projects")}
+                    <FaChevronDown
+                      className={openDropdown === "projects" ? "rotated" : ""}
+                    />
+                  </h4>
+                  <ul
+                    className={`footer-dropdown-menu ${
+                      openDropdown === "projects" ? "show" : ""
+                    }`}
+                  >
+                    <li>
+                      <Link href="/projects/national-programs-projects">
+                        {t("navigation.nationalPrograms")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/projects/un-programs-projects">
+                        {t("navigation.unPrograms")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/projects/gmh-programs-projects">
+                        {t("navigation.gmhPrograms")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/projects/gmh-initiatives">
+                        {t("navigation.initiatives")}
+                      </Link>
+                    </li>
+                  </ul>
+
+                  <h4
+                    className="widget-title footer-dropdown-toggle"
+                    onClick={() => toggleDropdown("news")}
+                  >
+                    News
+                    <FaChevronDown
+                      className={openDropdown === "news" ? "rotated" : ""}
+                    />
+                  </h4>
+                  <ul
+                    className={`footer-dropdown-menu ${
+                      openDropdown === "news" ? "show" : ""
+                    }`}
+                  >
+                    <li>
+                      <Link href="/news/news-media">News Media</Link>
+                    </li>
+                    <li>
+                      <Link href="/news/events">Events</Link>
+                    </li>
+                  </ul>
+
+                  <h4
+                    className="widget-title footer-dropdown-toggle"
+                    onClick={() => toggleDropdown("resources")}
+                  >
+                    Resources
+                    <FaChevronDown
+                      className={openDropdown === "resources" ? "rotated" : ""}
+                    />
+                  </h4>
+                  <ul
+                    className={`footer-dropdown-menu ${
+                      openDropdown === "resources" ? "show" : ""
+                    }`}
+                  >
+                    <li>
+                      <Link href="/data-resources/gmh-data-resources">
+                        Data & Resources
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/data-resources/gmh-tools-methods">
+                        Tools & Methods
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/data-resources/gmh-publications">
+                        Publications
+                      </Link>
+                    </li>
+                  </ul>
+
+                  <h4
+                    className="widget-title footer-dropdown-toggle"
+                    onClick={() => toggleDropdown("membership")}
+                  >
+                    Membership
+                    <FaChevronDown
+                      className={openDropdown === "membership" ? "rotated" : ""}
+                    />
+                  </h4>
+                  <ul
+                    className={`footer-dropdown-menu ${
+                      openDropdown === "membership" ? "show" : ""
+                    }`}
+                  >
+                    <li>
+                      <Link href="/membership/membership-categories">
+                        Categories
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/membership/applications">Applications</Link>
+                    </li>
+                  </ul>
                 </div>
-            </footer>
-        </>
-    );
+              </div>
+
+              <div className="col-lg-3 col-md-6 item">
+                <div className="footer-item recent-post">
+                  <h4 className="widget-title">{t("recentPosts.title")}</h4>
+                  {isLoading ? (
+                    <ul>
+                      <li>
+                        <div className="info">
+                          <div className="meta-title">
+                            <span className="post-date">
+                              {t("recentPosts.loading")}
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  ) : error ? (
+                    <ul>
+                      <li>
+                        <div className="info">
+                          <div className="meta-title">
+                            <span className="post-date">
+                              {t("recentPosts.error")}
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  ) : recentArticles.length > 0 ? (
+                    <ul>
+                      {recentArticles.map((article) => (
+                        <FooterRecentPost blog={article} key={article.id} />
+                      ))}
+                    </ul>
+                  ) : (
+                    <ul>
+                      <li>
+                        <div className="info">
+                          <div className="meta-title">
+                            <span className="post-date">
+                              {t("recentPosts.noPosts")}
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  )}
+                </div>
+              </div>
+
+              <div className="col-lg-3 col-md-6 item">
+                <div className="footer-item contact">
+                  <h4 className="widget-title">{t("contactInfo.title")}</h4>
+                  <ul>
+                    <li>
+                      <div className="icon">
+                        <i className="fas fa-home" />
+                      </div>
+                      <div className="content">
+                        <strong>{t("contactInfo.address")}:</strong>
+                        <div
+                          style={{
+                            whiteSpace: "normal",
+                            wordBreak: "break-word",
+                            lineHeight: "1.6",
+                            marginTop: "5px",
+                          }}
+                        >
+                          {t("contactInfo.addressValue")}
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="icon">
+                        <i className="fas fa-envelope" />
+                      </div>
+                      <div className="content">
+                        <strong>{t("contactInfo.email")}:</strong>
+                        <a
+                          href={`mailto:${t("contactInfo.emailValue")}`}
+                          style={{
+                            display: "block",
+                            wordBreak: "break-word",
+                            marginTop: "5px",
+                          }}
+                        >
+                          {t("contactInfo.emailValue")}
+                        </a>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="icon">
+                        <i className="fas fa-phone" />
+                      </div>
+                      <div className="content">
+                        <strong>{t("contactInfo.phone")}:</strong>
+                        <a
+                          href={`tel:${t("contactInfo.phoneValue")}`}
+                          style={{ display: "block", marginTop: "5px" }}
+                        >
+                          {t("contactInfo.phoneValue")}
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="footer-bottom text-center">
+            <div className="row">
+              <div className="col-lg-12">
+                <p>{t("copyright", { year: new Date().getFullYear() })}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="shape-right-bottom">
+          <Image
+            src="/assets/img/shape/7.png"
+            alt="Image Not Found"
+            width={1000}
+            height={500}
+          />
+        </div>
+      </footer>
+    </>
+  );
 };
 
 export default FooterV1;

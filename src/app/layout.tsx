@@ -16,6 +16,7 @@ import '@/assets/css/helper.css';
 import '@/assets/css/unit-test.css';
 import '@/assets/css/shop.css';
 import '@/assets/css/style.css';
+import './globals.css';
 
 import Dependency from '@/components/utilities/Dependency';
 import ReduxWrapper from '@/components/utilities/ReduxWrapper';

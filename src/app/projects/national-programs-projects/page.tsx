@@ -1,23 +1,16 @@
-import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
-import GalleryV2 from "@/components/gallery/GalleryV2";
+"use client";
+import BreadCrumbWrapper from "@/components/breadCrumb/BreadCrumbWrapper";
 import LayoutV1 from "@/components/layouts/LayoutV1";
-import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
+import NationalProgramsProjectsContent from "@/components/project/NationalProgramsProjectsContent";
 
-export const metadata = {
-    title: "GMH - National programs & projects"
-};
-
-const NationalProgramsProjectsPage = () => {
+export default function NationalProgramsProjectsPage() {
     return (
         <>
             <LayoutV1>
-                <BreadCrumb title="National programs & projects" breadCrumb="Projects & Programmes / National programs & projects" />
-                <GalleryV2 />
-                <WhyChooseV1 />
+                <BreadCrumbWrapper titleKey="nationalProgramsProjects" breadCrumbKey="projectsProgrammes / nationalProgramsProjects" />
+                <NationalProgramsProjectsContent />
             </LayoutV1>
         </>
     );
-};
-
-export default NationalProgramsProjectsPage;
+}
 

@@ -1,15 +1,12 @@
-import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
+"use client";
+import BreadCrumbWrapper from "@/components/breadCrumb/BreadCrumbWrapper";
 import LayoutV1 from "@/components/layouts/LayoutV1";
 
-export const metadata = {
-    title: "GMH - Applications"
-};
-
-const ApplicationsPage = () => {
+export default function ApplicationsPage() {
     return (
         <>
             <LayoutV1>
-                <BreadCrumb title="Applications" breadCrumb="Membership / Applications" />
+                <BreadCrumbWrapper titleKey="applications" breadCrumbKey="membership / applications" />
                 <div className="container default-padding-top-bottom">
                     <div className="row">
                         <div className="col-lg-12">
@@ -20,7 +17,5 @@ const ApplicationsPage = () => {
             </LayoutV1>
         </>
     );
-};
-
-export default ApplicationsPage;
+}
 

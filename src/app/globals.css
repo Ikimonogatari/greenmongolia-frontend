@@ -1,0 +1,287 @@
+/* Fix image height in feature-style-one-item */
+.feature-style-one-item img {
+  max-height: 600px;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+/* Featured Products Row Layout */
+.featured-products-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Footer Dropdown Styles - Column Layout */
+.footer-dropdown-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-dropdown-column .footer-dropdown-toggle {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.footer-dropdown-column .footer-dropdown-toggle:first-child {
+  margin-top: 0;
+}
+
+/* Footer Dropdown Menu - Force Hidden by Default */
+.footer-dropdown-column ul.footer-dropdown-menu,
+.footer-item.link ul.footer-dropdown-menu,
+.footer-dropdown-column .footer-dropdown-menu,
+.footer-item.link .footer-dropdown-menu,
+.footer-dropdown-menu {
+  max-height: 0 !important;
+  overflow: hidden !important;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out !important;
+  opacity: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+  visibility: hidden !important;
+  display: block !important;
+}
+
+.footer-dropdown-column ul.footer-dropdown-menu.show,
+.footer-item.link ul.footer-dropdown-menu.show,
+.footer-dropdown-column .footer-dropdown-menu.show,
+.footer-item.link .footer-dropdown-menu.show,
+.footer-dropdown-menu.show {
+  max-height: 500px !important;
+  opacity: 1 !important;
+  transition: max-height 0.3s ease-in, opacity 0.3s ease-in !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Override template default styles for footer links - Hide list items by default */
+.footer-dropdown-column .footer-dropdown-menu li,
+.footer-item.link .footer-dropdown-menu li {
+  display: none !important;
+  margin-top: 0 !important;
+}
+
+.footer-dropdown-column .footer-dropdown-menu.show li,
+.footer-item.link .footer-dropdown-menu.show li {
+  display: block !important;
+  margin-top: 8px !important;
+}
+
+.footer-dropdown-column .footer-dropdown-menu.show li:first-child,
+.footer-item.link .footer-dropdown-menu.show li:first-child {
+  margin-top: 0 !important;
+}
+
+.footer-dropdown-toggle {
+  user-select: none;
+  transition: color 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 600;
+  gap: 8px;
+}
+
+.footer-dropdown-toggle:hover {
+  color: var(--color-theme, #ffb524);
+}
+
+.footer-dropdown-toggle svg {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+  margin-left: 0;
+  flex-shrink: 0;
+}
+
+.footer-dropdown-toggle svg.rotated {
+  transform: rotate(180deg);
+}
+
+.footer-dropdown-menu li {
+  margin-bottom: 8px;
+}
+
+.footer-dropdown-menu li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-dropdown-menu li a {
+  font-size: 14px;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.footer-dropdown-menu li a:hover {
+  opacity: 1;
+  color: var(--color-theme, #ffb524);
+}
+
+/* Contact Info Section - Prevent Squishing */
+.footer-item.contact .content {
+  min-width: 0;
+  flex: 1;
+}
+
+.footer-item.contact li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.footer-item.contact li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-item.contact .icon {
+  flex-shrink: 0;
+  margin-right: 15px;
+  margin-top: 3px;
+}
+
+.footer-item.contact .content {
+  flex: 1;
+  min-width: 0;
+}
+
+.footer-item.contact .content strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.footer-item.contact .content > div,
+.footer-item.contact .content > a {
+  display: block;
+  font-size: 14px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+/* Email submit button with icon */
+.footer-item.about form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  min-width: 50px;
+}
+
+.footer-item.about form button svg {
+  font-size: 16px;
+}
+
+
+.featured-product-card {
+  background: var(--white);
+  box-shadow: 0px 15px 60px -10px rgb(109 117 143 / 33%);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 20px 80px -10px rgb(109 117 143 / 40%);
+}
+
+.featured-product-card .thumb {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.featured-product-card .thumb img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.featured-product-card .info h5 {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.featured-product-card .info p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-body);
+}
+
+/* Responsive fixes */
+@media only screen and (max-width: 991px) {
+  .featured-products-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .featured-products-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .featured-product-card {
+    padding: 25px 20px;
+  }
+  
+  .featured-product-card .thumb img {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .featured-product-card .info h5 {
+    font-size: 18px;
+  }
+  
+  .featured-product-card .info p {
+    font-size: 13px;
+  }
+}
+
+/* Language Switcher Dropdown - Remove excessive left padding and width (only for language switcher) */
+.language-switcher-dropdown {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  padding-right: 0 !important;
+  padding: 6px 0 !important;
+  min-width: auto !important;
+  width: auto !important;
+  left: auto !important;
+  right: 0 !important;
+}
+
+.language-switcher-dropdown li {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.language-switcher-dropdown li a {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+}

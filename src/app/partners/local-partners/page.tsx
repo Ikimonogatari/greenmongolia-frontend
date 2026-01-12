@@ -1,23 +1,18 @@
-import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
+"use client";
+import BreadCrumbWrapper from "@/components/breadCrumb/BreadCrumbWrapper";
 import LayoutV1 from "@/components/layouts/LayoutV1";
 import Partner from "@/components/partner/Partner";
 import LocalPartnersContent from "@/components/partner/LocalPartnersContent";
 
-export const metadata = {
-    title: "GMH - Local partners"
-};
-
-const LocalPartnersPage = () => {
+export default function LocalPartnersPage() {
     return (
         <>
             <LayoutV1>
-                <BreadCrumb title="Local partners" breadCrumb="Partners / Local partners" />
+                <BreadCrumbWrapper titleKey="localPartners" breadCrumbKey="partners / localPartners" />
                 <Partner />
                 <LocalPartnersContent />
             </LayoutV1>
         </>
     );
-};
-
-export default LocalPartnersPage;
+}
 

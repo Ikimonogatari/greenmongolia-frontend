@@ -1,23 +1,16 @@
-import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
-import GalleryV2 from "@/components/gallery/GalleryV2";
+"use client";
+import BreadCrumbWrapper from "@/components/breadCrumb/BreadCrumbWrapper";
 import LayoutV1 from "@/components/layouts/LayoutV1";
-import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
+import UNProgramsProjectsContent from "@/components/project/UNProgramsProjectsContent";
 
-export const metadata = {
-    title: "GMH - UN programs & projects"
-};
-
-const UNProgramsProjectsPage = () => {
+export default function UNProgramsProjectsPage() {
     return (
         <>
             <LayoutV1>
-                <BreadCrumb title="UN programs & projects" breadCrumb="Projects & Programmes / UN programs & projects" />
-                <GalleryV2 />
-                <WhyChooseV1 />
+                <BreadCrumbWrapper titleKey="unProgramsProjects" breadCrumbKey="projectsProgrammes / unProgramsProjects" />
+                <UNProgramsProjectsContent />
             </LayoutV1>
         </>
     );
-};
-
-export default UNProgramsProjectsPage;
+}
 

@@ -1,8 +1,12 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { FaPhoneAlt, FaCommentsDollar } from "react-icons/fa";
+import { useTranslations } from "next-intl";
+import { FaPhoneAlt, FaEnvelope, FaGlobe } from "react-icons/fa";
 
 const HeaderTopV2 = () => {
+    const t = useTranslations("Header");
+
     return (
         <>
             <div className="top-bar top-style-two bg-dark text-light">
@@ -15,8 +19,8 @@ const HeaderTopV2 = () => {
                                         <FaPhoneAlt />
                                     </div>
                                     <div className="content">
-                                        <span>Call Anytime</span>
-                                        <a href="tel:+4733378901">+4733378901</a>
+                                        <span>{t("contactPhone")}</span>
+                                        <a href={`tel:${t("phone")}`}>{t("phone")}</a>
                                     </div>
                                 </li>
                             </ul>
@@ -30,11 +34,11 @@ const HeaderTopV2 = () => {
                             <ul>
                                 <li>
                                     <div className="icon">
-                                        <FaCommentsDollar />
+                                        <FaEnvelope />
                                     </div>
                                     <div className="content">
-                                        <span>Write Email</span>
-                                        <a href="mailto:info@agrul.com">info@agrul.com</a>
+                                        <span>{t("contactEmail")}</span>
+                                        <a href={`mailto:${t("email")}`}>{t("email")}</a>
                                     </div>
                                 </li>
                             </ul>

@@ -1,25 +1,16 @@
-import BlogStandardContent from "@/components/blog/BlogStandardContent";
-import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
+"use client";
+import GMHPublicationsContent from "@/components/resources/GMHPublicationsContent";
+import BreadCrumbWrapper from "@/components/breadCrumb/BreadCrumbWrapper";
 import LayoutV1 from "@/components/layouts/LayoutV1";
-import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
-import CallToAction from "@/components/cta/CallToAction";
 
-export const metadata = {
-    title: "GMH - GMH publications"
-};
-
-const GMHPublicationsPage = () => {
+export default function GMHPublicationsPage() {
     return (
         <>
             <LayoutV1>
-                <BreadCrumb title="GMH publications" breadCrumb="Data & Resources / GMH publications" />
-                <BlogStandardContent />
-                <WhyChooseV1 />
-                <CallToAction />
+                <BreadCrumbWrapper titleKey="gmhPublications" breadCrumbKey="dataResources / gmhPublications" />
+                <GMHPublicationsContent />
             </LayoutV1>
         </>
     );
-};
-
-export default GMHPublicationsPage;
+}
 

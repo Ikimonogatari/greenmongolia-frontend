@@ -1,6 +1,7 @@
 "use client"
 import Image from 'next/image';
 import { toast } from 'react-toastify';
+import { useTranslations } from 'next-intl';
 import { useSubmitContactMutation } from '@/store/api/contactsApi';
 
 interface FormEventHandler {
@@ -8,6 +9,8 @@ interface FormEventHandler {
 }
 
 const ContactV1 = () => {
+    const t = useTranslations("Contact");
+    const tFooter = useTranslations("Footer");
     const [submitContact, { isLoading: isSubmitting }] = useSubmitContactMutation();
 
     const handleForm: FormEventHandler = async (event) => {
@@ -23,7 +26,7 @@ const ContactV1 = () => {
 
         // Validate required fields
         if (!name || !email || !phone || !comments) {
-            toast.error("Please fill in all required fields");
+            toast.error(t("form.validationError"));
             return;
         }
 
@@ -39,11 +42,11 @@ const ContactV1 = () => {
 
             // Success - reset form and show success message
             form.reset();
-            toast.success("Thanks For Your Message! We'll get back to you soon.");
+            toast.success(t("form.successMessage"));
         } catch (error: any) {
             // Error handling
             console.error("Error submitting contact form:", error);
-            const errorMessage = error?.data?.message || error?.message || "Failed to send message. Please try again.";
+            const errorMessage = error?.data?.message || error?.message || t("form.errorMessage");
             toast.error(errorMessage);
         }
     }
@@ -59,14 +62,14 @@ const ContactV1 = () => {
                         <div className="col-tact-stye-one col-xl-6 col-lg-7">
                             <div className="contact-form-style-one mb-md-50">
                                 <Image src="/assets/img/illustration/10.png" alt="Image Not Found" width={360} height={600} />
-                                <h5 className="sub-title">Have Questions?</h5>
-                                <h2 className="heading">Send us a massage</h2>
+                                <h5 className="sub-title">{t("form.subTitle")}</h5>
+                                <h2 className="heading">{t("form.title")}</h2>
 
                                 <form className="contact-form contact-form" onSubmit={handleForm}>
                                     <div className="row">
                                         <div className="col-lg-12">
                                             <div className="form-group">
-                                                <input className="form-control" id="name" name="name" placeholder="Name" type="text" required autoComplete='off' />
+                                                <input className="form-control" id="name" name="name" placeholder={t("form.namePlaceholder")} type="text" required autoComplete='off' />
                                                 <span className="alert-error" />
                                             </div>
                                         </div>
@@ -74,13 +77,13 @@ const ContactV1 = () => {
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <div className="form-group">
-                                                <input className="form-control" id="email" name="email" placeholder="Email*" type="email" required autoComplete='off' />
+                                                <input className="form-control" id="email" name="email" placeholder={t("form.emailPlaceholder")} type="email" required autoComplete='off' />
                                                 <span className="alert-error" />
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="form-group">
-                                                <input className="form-control no-arrows" id="phone" name="phone" placeholder="Phone" type="number" required autoComplete='off' />
+                                                <input className="form-control no-arrows" id="phone" name="phone" placeholder={t("form.phonePlaceholder")} type="number" required autoComplete='off' />
                                                 <span className="alert-error" />
                                             </div>
                                         </div>
@@ -88,7 +91,7 @@ const ContactV1 = () => {
                                     <div className="row">
                                         <div className="col-lg-12">
                                             <div className="form-group comments">
-                                                <textarea className="form-control" id="comments" name="comments" placeholder="Tell Us About Project *" required autoComplete='off' />
+                                                <textarea className="form-control" id="comments" name="comments" placeholder={t("form.messagePlaceholder")} required autoComplete='off' />
                                             </div>
                                         </div>
                                     </div>
@@ -101,7 +104,7 @@ const ContactV1 = () => {
                                                 disabled={isSubmitting}
                                             >
                                                 <i className="fa fa-paper-plane" /> 
-                                                {isSubmitting ? "Sending..." : "Get in Touch"}
+                                                {isSubmitting ? t("form.sending") : t("form.submitButton")}
                                             </button>
                                         </div>
                                     </div>
@@ -116,34 +119,31 @@ const ContactV1 = () => {
                         <div className="col-tact-stye-one col-xl-5 offset-xl-1 col-lg-5">
                             <div className="contact-style-one-info text-light">
                                 <h2>
-                                    Contact
-                                    <span>
-                                        Information
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none"><path d="M14.4,111.6c0,0,202.9-33.7,471.2,0c0,0-194-8.9-397.3,24.7c0,0,141.9-5.9,309.2,0" style={{ animationPlayState: 'running' }} /></svg>
-                                    </span>
+                                    {t("info.title")} <span>{t("info.titleSuffix")}</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none"><path d="M14.4,111.6c0,0,202.9-33.7,471.2,0c0,0-194-8.9-397.3,24.7c0,0,141.9-5.9,309.2,0" style={{ animationPlayState: 'running' }} /></svg>
                                 </h2>
                                 <p>
-                                    Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing.
+                                    {t("info.description")}
                                 </p>
                                 <ul>
                                     <li>
                                         <div className="content">
-                                            <h5 className="title">Hotline</h5>
-                                            <a href="tel:4733378901">+4733378901</a>
+                                            <h5 className="title">{t("info.phoneTitle")}</h5>
+                                            <a href={`tel:${tFooter("contactInfo.phoneValue")}`}>{tFooter("contactInfo.phoneValue")}</a>
                                         </div>
                                     </li>
                                     <li>
                                         <div className="info">
-                                            <h5 className="title">Our Location</h5>
+                                            <h5 className="title">{t("info.addressTitle")}</h5>
                                             <p>
-                                                55 Main Street, The Grand Avenue 2nd Block, <br /> New York City
+                                                {tFooter("contactInfo.addressValue")}
                                             </p>
                                         </div>
                                     </li>
                                     <li>
                                         <div className="info">
-                                            <h5 className="title">Official Email</h5>
-                                            <a href="mailto:info@agrul.com.com">info@agrul.com</a>
+                                            <h5 className="title">{t("info.emailTitle")}</h5>
+                                            <a href={`mailto:${tFooter("contactInfo.emailValue")}`}>{tFooter("contactInfo.emailValue")}</a>
                                         </div>
                                     </li>
                                 </ul>

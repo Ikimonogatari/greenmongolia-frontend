@@ -1,25 +1,16 @@
-import BlogStandardContent from "@/components/blog/BlogStandardContent";
-import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
+"use client";
+import GMHToolsMethodsContent from "@/components/resources/GMHToolsMethodsContent";
+import BreadCrumbWrapper from "@/components/breadCrumb/BreadCrumbWrapper";
 import LayoutV1 from "@/components/layouts/LayoutV1";
-import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
-import FaqV2 from "@/components/faq/FaqV2";
 
-export const metadata = {
-    title: "GMH - GMH tools & methods"
-};
-
-const GMHToolsMethodsPage = () => {
+export default function GMHToolsMethodsPage() {
     return (
         <>
             <LayoutV1>
-                <BreadCrumb title="GMH tools & methods" breadCrumb="Data & Resources / GMH tools & methods" />
-                <BlogStandardContent />
-                <WhyChooseV1 />
-                <FaqV2 />
+                <BreadCrumbWrapper titleKey="gmhToolsMethods" breadCrumbKey="dataResources / gmhToolsMethods" />
+                <GMHToolsMethodsContent />
             </LayoutV1>
         </>
     );
-};
-
-export default GMHToolsMethodsPage;
+}
 

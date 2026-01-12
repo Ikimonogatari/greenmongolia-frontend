@@ -1,21 +1,16 @@
-import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
+"use client";
+import BreadCrumbWrapper from "@/components/breadCrumb/BreadCrumbWrapper";
 import LayoutV1 from "@/components/layouts/LayoutV1";
 import DonateContent from "@/components/partner/DonateContent";
 
-export const metadata = {
-    title: "GMH - Donate"
-};
-
-const DonatePage = () => {
+export default function DonatePage() {
     return (
         <>
             <LayoutV1>
-                <BreadCrumb title="Donate" breadCrumb="Partners / Donate" />
+                <BreadCrumbWrapper titleKey="donate" breadCrumbKey="partners / donate" />
                 <DonateContent />
             </LayoutV1>
         </>
     );
-};
-
-export default DonatePage;
+}
 

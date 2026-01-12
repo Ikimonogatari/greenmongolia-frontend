@@ -1,26 +1,16 @@
-import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
+"use client";
+import BreadCrumbWrapper from "@/components/breadCrumb/BreadCrumbWrapper";
 import LayoutV1 from "@/components/layouts/LayoutV1";
+import PoliciesStrategiesContent from "@/components/governance/PoliciesStrategiesContent";
 
-export const metadata = {
-    title: "GMH - Policies & strategies"
-};
-
-const PoliciesStrategiesPage = () => {
+export default function PoliciesStrategiesPage() {
     return (
         <>
             <LayoutV1>
-                <BreadCrumb title="Policies & strategies" breadCrumb="Governance / Policies & strategies" />
-                <div className="container default-padding-top-bottom">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            {/* Content will be added here */}
-                        </div>
-                    </div>
-                </div>
+                <BreadCrumbWrapper titleKey="policiesStrategies" breadCrumbKey="governance / policiesStrategies" />
+                <PoliciesStrategiesContent />
             </LayoutV1>
         </>
     );
-};
-
-export default PoliciesStrategiesPage;
+}
 
