@@ -1,6 +1,5 @@
 "use client";
 import { useTranslations } from "next-intl";
-import SingleFeatureV1 from "@/components/feature/SingleFeatureV1";
 import Image from "next/image";
 import Link from "next/link";
 

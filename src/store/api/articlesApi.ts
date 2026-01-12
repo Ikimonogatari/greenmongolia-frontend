@@ -23,7 +23,7 @@ export interface Article {
   image?: string | { id: string; filename_download: string }; // Directus file field
   comments?: number;
   // Allow for additional fields from Directus
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 // Component-friendly article format
@@ -144,7 +144,7 @@ export const articlesApi = createApi({
       providesTags: ["Articles"],
     }),
     // Get articles with query parameters (for filtering, sorting, etc.)
-    getArticlesWithParams: builder.query<ArticlesResponse, Record<string, any>>(
+    getArticlesWithParams: builder.query<ArticlesResponse, Record<string, unknown>>(
       {
         query: (params) => ({
           url: "",
@@ -165,10 +165,14 @@ export const articlesApi = createApi({
       }),
       transformResponse: (response: Article | { data: Article }): Article => {
         // Directus may return the item directly or wrapped in a data object
-        if ("data" in response && response.data) {
-          return response.data;
+        if ("data" in response && response.data && typeof response.data === 'object' && 'id' in response.data && 'title' in response.data) {
+          return response.data as Article;
         }
-        return response as Article;
+        if ('id' in response && 'title' in response) {
+          return response as Article;
+        }
+        // Fallback: return empty article structure
+        return { id: 0, title: '' } as Article;
       },
       providesTags: (result, error, id) => [{ type: "Articles", id }],
     }),

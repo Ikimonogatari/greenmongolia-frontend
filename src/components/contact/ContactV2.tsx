@@ -40,10 +40,17 @@ const ContactV2 = () => {
             // Success - reset form and show success message
             form.reset();
             toast.success("Thanks For Your Message! We'll get back to you soon.");
-        } catch (error: any) {
+        } catch (error: unknown) {
             // Error handling
             console.error("Error submitting contact form:", error);
-            const errorMessage = error?.data?.message || error?.message || "Failed to send message. Please try again.";
+            let errorMessage = "Failed to send message. Please try again.";
+            if (error && typeof error === 'object') {
+                if ('data' in error && error.data && typeof error.data === 'object' && 'message' in error.data) {
+                    errorMessage = String(error.data.message);
+                } else if ('message' in error) {
+                    errorMessage = String(error.message);
+                }
+            }
             toast.error(errorMessage);
         }
     }

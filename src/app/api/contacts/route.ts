@@ -9,10 +9,11 @@ export async function POST(request: NextRequest) {
     let body;
     try {
       body = await request.json();
-    } catch (parseError: any) {
+    } catch (parseError: unknown) {
       console.error("Error parsing request body:", parseError);
+      const errorMessage = parseError instanceof Error ? parseError.message : "Unknown error";
       return NextResponse.json(
-        { error: "Invalid JSON in request body", message: parseError.message },
+        { error: "Invalid JSON in request body", message: errorMessage },
         { status: 400 }
       );
     }
@@ -72,26 +73,29 @@ export async function POST(request: NextRequest) {
     try {
       const data = JSON.parse(responseText);
       return NextResponse.json(data);
-    } catch (jsonError: any) {
+    } catch (jsonError: unknown) {
       console.error("Error parsing Directus response as JSON:", jsonError);
       console.error("Response text:", responseText);
       // Return the raw response if JSON parsing fails
+      const errorMessage = jsonError instanceof Error ? jsonError.message : "Unknown error";
       return NextResponse.json(
         {
           error: "Invalid JSON response from Directus",
           rawResponse: responseText,
-          message: jsonError.message,
+          message: errorMessage,
         },
         { status: 500 }
       );
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error creating contact:", error);
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorStack = error instanceof Error ? error.stack : undefined;
     return NextResponse.json(
       {
         error: "Internal server error",
-        message: error.message,
-        stack: process.env.NODE_ENV === "development" ? error.stack : undefined,
+        message: errorMessage,
+        stack: process.env.NODE_ENV === "development" ? errorStack : undefined,
       },
       { status: 500 }
     );

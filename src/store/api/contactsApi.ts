@@ -26,7 +26,7 @@ export interface Contact {
   status: string;
   date_created?: string;
   date_updated?: string;
-  [key: string]: any; // Allow for additional fields from Directus
+  [key: string]: unknown; // Allow for additional fields from Directus
 }
 
 // Response type from Directus for POST requests

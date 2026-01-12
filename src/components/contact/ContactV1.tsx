@@ -43,10 +43,17 @@ const ContactV1 = () => {
             // Success - reset form and show success message
             form.reset();
             toast.success(t("form.successMessage"));
-        } catch (error: any) {
+        } catch (error: unknown) {
             // Error handling
             console.error("Error submitting contact form:", error);
-            const errorMessage = error?.data?.message || error?.message || t("form.errorMessage");
+            let errorMessage = t("form.errorMessage");
+            if (error && typeof error === 'object') {
+                if ('data' in error && error.data && typeof error.data === 'object' && 'message' in error.data) {
+                    errorMessage = String(error.data.message);
+                } else if ('message' in error) {
+                    errorMessage = String(error.message);
+                }
+            }
             toast.error(errorMessage);
         }
     }

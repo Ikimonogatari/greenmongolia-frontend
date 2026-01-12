@@ -1,11 +1,9 @@
 "use client";
-import { useTranslations } from "next-intl";
 import GalleryV2 from "@/components/gallery/GalleryV2";
 import NationalProgramsService from "./NationalProgramsService";
 import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
 
 const NationalProgramsProjectsContent = () => {
-  const t = useTranslations("NationalProgramsProjects");
 
   return (
     <>

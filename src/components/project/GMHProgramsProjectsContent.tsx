@@ -1,12 +1,10 @@
 "use client";
-import { useTranslations } from "next-intl";
 import GalleryV1 from "@/components/gallery/GalleryV1";
 import ProjectCategoriesService from "./ProjectCategoriesService";
 import ProjectStats from "./ProjectStats";
 import CustomWhyChooseV2 from "./CustomWhyChooseV2";
 
 const GMHProgramsProjectsContent = () => {
-  const t = useTranslations("GMHProgramsProjects");
 
   return (
     <>

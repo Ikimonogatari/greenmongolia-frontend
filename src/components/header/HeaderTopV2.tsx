@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { FaPhoneAlt, FaEnvelope, FaGlobe } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const HeaderTopV2 = () => {
     const t = useTranslations("Header");

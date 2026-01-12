@@ -5,10 +5,10 @@ const DIRECTUS_BASE_URL =
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const searchParams = request.nextUrl.searchParams;
 
     const url = `${DIRECTUS_BASE_URL}/items/Articles/${id}`;
@@ -71,27 +71,30 @@ export async function GET(
     try {
       const data = JSON.parse(responseText);
       return NextResponse.json(data);
-    } catch (jsonError: any) {
+    } catch (jsonError: unknown) {
       console.error("Error parsing Directus response as JSON:", jsonError);
       console.error("Response text:", responseText);
       // Return the raw response if JSON parsing fails
+      const errorMessage = jsonError instanceof Error ? jsonError.message : "Unknown error";
       return NextResponse.json(
         {
           error: "Invalid JSON response from Directus",
           rawResponse: responseText,
-          message: jsonError.message,
+          message: errorMessage,
         },
         { status: 500 }
       );
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error fetching article:", error);
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorStack = error instanceof Error ? error.stack : undefined;
     return NextResponse.json(
       {
         error: "Internal server error",
-        message: error.message,
+        message: errorMessage,
         stack:
-          process.env.NODE_ENV === "development" ? error.stack : undefined,
+          process.env.NODE_ENV === "development" ? errorStack : undefined,
       },
       { status: 500 }
     );

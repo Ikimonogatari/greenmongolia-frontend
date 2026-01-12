@@ -1,12 +1,10 @@
 "use client";
-import { useTranslations } from "next-intl";
 import GalleryV2 from "@/components/gallery/GalleryV2";
 import KubuqiFeatures from "./KubuqiFeatures";
 import KubuqiTimeline from "./KubuqiTimeline";
 import CustomWhyChooseV4 from "./CustomWhyChooseV4";
 
 const GMHInitiativesContent = () => {
-  const t = useTranslations("GMHInitiatives");
 
   return (
     <>

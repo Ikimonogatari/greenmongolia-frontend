@@ -17,7 +17,7 @@ const BreadCrumb = ({ title, breadCrumb }: DataType) => {
       const parts = crumb.split(" / ").map((p) => p.trim());
       const translatedParts = parts.map((part) => {
         try {
-          return t(part as any) || part;
+          return t(part as Parameters<typeof t>[0]) || part;
         } catch {
           return part;
         }
@@ -25,7 +25,7 @@ const BreadCrumb = ({ title, breadCrumb }: DataType) => {
       return translatedParts.join(" / ");
     }
     try {
-      return t(breadCrumb as any) || breadCrumb;
+      return t(breadCrumb as Parameters<typeof t>[0]) || breadCrumb;
     } catch {
       return breadCrumb;
     }
@@ -34,7 +34,7 @@ const BreadCrumb = ({ title, breadCrumb }: DataType) => {
   const translatedTitle = title
     ? (() => {
         try {
-          return t(title as any) || title;
+          return t(title as Parameters<typeof t>[0]) || title;
         } catch {
           return title;
         }
