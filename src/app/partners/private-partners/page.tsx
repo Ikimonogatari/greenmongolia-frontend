@@ -1,8 +1,7 @@
 import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
 import LayoutV1 from "@/components/layouts/LayoutV1";
 import Partner from "@/components/partner/Partner";
-import TestimonialV2 from "@/components/testimonials/TestimonialV2";
-import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
+import PrivatePartnersContent from "@/components/partner/PrivatePartnersContent";
 
 export const metadata = {
     title: "GMH - Private partners"
@@ -14,8 +13,7 @@ const PrivatePartnersPage = () => {
             <LayoutV1>
                 <BreadCrumb title="Private partners" breadCrumb="Partners / Private partners" />
                 <Partner />
-                <TestimonialV2 />
-                <WhyChooseV1 />
+                <PrivatePartnersContent />
             </LayoutV1>
         </>
     );

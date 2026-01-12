@@ -1,7 +1,6 @@
 import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
 import LayoutV1 from "@/components/layouts/LayoutV1";
-import CallToAction from "@/components/cta/CallToAction";
-import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
+import DonateContent from "@/components/partner/DonateContent";
 
 export const metadata = {
     title: "GMH - Donate"
@@ -12,8 +11,7 @@ const DonatePage = () => {
         <>
             <LayoutV1>
                 <BreadCrumb title="Donate" breadCrumb="Partners / Donate" />
-                <CallToAction />
-                <WhyChooseV1 />
+                <DonateContent />
             </LayoutV1>
         </>
     );
