@@ -2,9 +2,10 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // Use Next.js API route proxy to avoid CORS issues
 // The API routes handle the Directus connection server-side
-const API_BASE_URL = typeof window !== 'undefined' 
-  ? window.location.origin 
-  : process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const API_BASE_URL =
+  typeof window !== "undefined"
+    ? window.location.origin
+    : process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 // Article interface matching Directus schema and component requirements
 export interface Article {
@@ -43,11 +44,13 @@ export interface BlogArticle {
 }
 
 // Helper function to format date from Directus format (ISO string) to component format
-const formatDate = (dateString?: string): { day: string; month: string; year: string; full_date: string } => {
+const formatDate = (
+  dateString?: string
+): { day: string; month: string; year: string; full_date: string } => {
   if (!dateString) {
     const now = new Date();
-    const day = now.getDate().toString().padStart(2, '0');
-    const month = now.toLocaleString('en-US', { month: 'short' });
+    const day = now.getDate().toString().padStart(2, "0");
+    const month = now.toLocaleString("en-US", { month: "short" });
     const year = now.getFullYear().toString();
     return {
       day,
@@ -58,10 +61,10 @@ const formatDate = (dateString?: string): { day: string; month: string; year: st
   }
 
   const date = new Date(dateString);
-  const day = date.getDate().toString().padStart(2, '0');
-  const month = date.toLocaleString('en-US', { month: 'short' });
+  const day = date.getDate().toString().padStart(2, "0");
+  const month = date.toLocaleString("en-US", { month: "short" });
   const year = date.getFullYear().toString();
-  
+
   return {
     day,
     month,
@@ -73,21 +76,22 @@ const formatDate = (dateString?: string): { day: string; month: string; year: st
 // Transform Directus article to blog format
 export const transformArticleToBlog = (article: Article): BlogArticle => {
   const dateInfo = formatDate(article.date_created || article.date_updated);
-  
+
   // Handle Directus file field - can be a string URL or an object
   let thumb = article.thumb;
   let thumbFull = article.thumbFull;
-  
+
   if (article.image) {
-      if (typeof article.image === 'string') {
-        thumb = article.image;
-        thumbFull = article.image;
-      } else if (article.image.filename_download) {
-        // If it's a Directus file object, construct the URL
-        const directusUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL || "http://localhost:8055";
-        thumb = `${directusUrl}/assets/${article.image.id}/${article.image.filename_download}`;
-        thumbFull = thumb;
-      }
+    if (typeof article.image === "string") {
+      thumb = article.image;
+      thumbFull = article.image;
+    } else if (article.image.filename_download) {
+      // If it's a Directus file object, construct the URL
+      const directusUrl =
+        process.env.NEXT_PUBLIC_DIRECTUS_URL || "http://localhost:8055";
+      thumb = `${directusUrl}/assets/${article.image.id}/${article.image.filename_download}`;
+      thumbFull = thumb;
+    }
   }
 
   return {
@@ -96,9 +100,10 @@ export const transformArticleToBlog = (article: Article): BlogArticle => {
     thumbFull: thumbFull || article.thumbFull || thumb || article.thumb,
     title: article.title,
     date: dateInfo,
-    author: article.author || 'Admin',
+    author: article.author || "Admin",
     full_date: dateInfo.full_date,
-    description: article.description || article.content?.substring(0, 200) || '',
+    description:
+      article.description || article.content?.substring(0, 200) || "",
     comments: article.comments || 0,
   };
 };
@@ -116,7 +121,7 @@ export interface ArticlesResponse {
 export const articlesApi = createApi({
   reducerPath: "articlesApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${API_BASE_URL}/api/articles`,
+    baseUrl: `${API_BASE_URL}/api/Articles`,
     prepareHeaders: (headers) => {
       // Add any authentication headers if needed
       // headers.set("Authorization", `Bearer ${token}`);
@@ -139,14 +144,16 @@ export const articlesApi = createApi({
       providesTags: ["Articles"],
     }),
     // Get articles with query parameters (for filtering, sorting, etc.)
-    getArticlesWithParams: builder.query<ArticlesResponse, Record<string, any>>({
-      query: (params) => ({
-        url: "",
-        method: "GET",
-        params,
-      }),
-      providesTags: ["Articles"],
-    }),
+    getArticlesWithParams: builder.query<ArticlesResponse, Record<string, any>>(
+      {
+        query: (params) => ({
+          url: "",
+          method: "GET",
+          params,
+        }),
+        providesTags: ["Articles"],
+      }
+    ),
     // Get single article by ID
     getArticleById: builder.query<Article, number>({
       query: (id) => ({
@@ -158,7 +165,7 @@ export const articlesApi = createApi({
       }),
       transformResponse: (response: Article | { data: Article }): Article => {
         // Directus may return the item directly or wrapped in a data object
-        if ('data' in response && response.data) {
+        if ("data" in response && response.data) {
           return response.data;
         }
         return response as Article;
@@ -195,5 +202,4 @@ export const {
   useGetArticleBySlugQuery,
 } = articlesApi;
 
-// Export transform function for use in components
-export { transformArticleToBlog };
+// transformArticleToBlog is already exported above
