@@ -4,6 +4,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./slices/cartSlice";
 import { articlesApi } from "./api/articlesApi";
 import { contactsApi } from "./api/contactsApi";
+import { directusApi } from "./api/directusApi";
 
 // Type-safe cart state interface
 interface CartState {
@@ -68,11 +69,13 @@ const store = configureStore({
         cart: cartReducer,
         [articlesApi.reducerPath]: articlesApi.reducer,
         [contactsApi.reducerPath]: contactsApi.reducer,
+        [directusApi.reducerPath]: directusApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(
             articlesApi.middleware,
-            contactsApi.middleware
+            contactsApi.middleware,
+            directusApi.middleware
         ),
     preloadedState: {
         cart: loadFromLocalStorage() ?? defaultCartState,
