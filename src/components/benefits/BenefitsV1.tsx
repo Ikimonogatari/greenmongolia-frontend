@@ -9,7 +9,7 @@ const BenefitsV1 = () => {
     <>
       <div
         className="benifits-area default-padding-top video-bg-live bg-cover mt--50 mt-md-0 mt-xs-0"
-        style={{ backgroundImage: "url(/assets/img/banner/16.jpg)" }}
+        style={{ backgroundColor: "white" }}
       >
         <VideoBg1 videoURL="UASTOWZKSN0" />
         <div

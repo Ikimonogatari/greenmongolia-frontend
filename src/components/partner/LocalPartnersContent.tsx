@@ -1,5 +1,5 @@
 "use client";
-import GalleryV1 from "@/components/gallery/GalleryV1";
+import GalleryV1GraphQL from "@/components/gallery/GalleryV1GraphQL";
 import WhyChooseV2 from "@/components/whyChoose/WhyChooseV2";
 import { useTranslations } from "next-intl";
 import CustomLocalPartnersService from "./CustomLocalPartnersService";
@@ -20,7 +20,7 @@ const LocalPartnersContent = () => {
       <CustomLocalPartnersService />
 
       {/* Gallery Section */}
-      <GalleryV1 />
+      <GalleryV1GraphQL />
 
       {/* Why Choose Section */}
       <WhyChooseV2 />

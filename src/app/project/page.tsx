@@ -1,5 +1,5 @@
 import BreadCrumb from '@/components/breadCrumb/BreadCrumb';
-import GalleryV2 from '@/components/gallery/GalleryV2';
+import GalleryV2GraphQL from '@/components/gallery/GalleryV2GraphQL';
 import LayoutV1 from '@/components/layouts/LayoutV1';
 
 export const metadata = {
@@ -11,7 +11,7 @@ const ProjectPage = () => {
         <>
             <LayoutV1>
                 <BreadCrumb title='Recent Projects' breadCrumb='Project' />
-                <GalleryV2 />
+                <GalleryV2GraphQL />
             </LayoutV1>
         </>
     );

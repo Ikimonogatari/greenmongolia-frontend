@@ -47,6 +47,7 @@
 /* Hide loading animation completely */
 .player {
   position: relative;
+  background: white;
 }
 
 .player::before {
@@ -56,16 +57,25 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: transparent;
+  background: white;
   z-index: 1;
   pointer-events: none;
 }
 
 /* Ensure video wrapper doesn't show loading states */
 .mbYTP_wrapper {
-  background: transparent !important;
+  background: white !important;
 }
 
 .mbYTP_wrapper > * {
-  background: transparent !important;
+  background: white !important;
+}
+
+/* Hide YouTube thumbnail/placeholder images */
+.mbYTP_wrapper .ytp-cued-thumbnail-overlay-image,
+.mbYTP_wrapper img,
+.mbYTP_wrapper .ytp-thumbnail-overlay-image {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }

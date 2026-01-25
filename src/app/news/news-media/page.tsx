@@ -1,5 +1,5 @@
 "use client";
-import BlogStandardContent from "@/components/blog/BlogStandardContent";
+import NewsStandardContent from "@/components/blog/NewsStandardContent";
 import BreadCrumbWrapper from "@/components/breadCrumb/BreadCrumbWrapper";
 import LayoutV1 from "@/components/layouts/LayoutV1";
 import CallToAction from "@/components/cta/CallToAction";
@@ -9,7 +9,7 @@ export default function NewsMediaPage() {
         <>
             <LayoutV1>
                 <BreadCrumbWrapper titleKey="newsMedia" breadCrumbKey="newsEvents / newsMedia" />
-                <BlogStandardContent />
+                <NewsStandardContent />
                 <CallToAction />
             </LayoutV1>
         </>

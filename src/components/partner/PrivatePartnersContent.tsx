@@ -1,7 +1,7 @@
 "use client";
 import { useTranslations } from "next-intl";
 import CustomPrivatePartnersFeatures from "./CustomPrivatePartnersFeatures";
-import GalleryV2 from "@/components/gallery/GalleryV2";
+import GalleryV2GraphQL from "@/components/gallery/GalleryV2GraphQL";
 import WhyChooseV4 from "@/components/whyChoose/WhyChooseV4";
 
 const PrivatePartnersContent = () => {
@@ -20,7 +20,7 @@ const PrivatePartnersContent = () => {
       <CustomPrivatePartnersFeatures />
 
       {/* Gallery Section */}
-      <GalleryV2 />
+      <GalleryV2GraphQL />
 
       {/* Why Choose Section */}
       <WhyChooseV4 />

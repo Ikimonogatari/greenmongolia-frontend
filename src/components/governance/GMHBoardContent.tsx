@@ -1,6 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
-import TeamV2 from "@/components/team/TeamV2";
+import TeamV3GraphQL from "@/components/team/TeamV3GraphQL";
 import CustomBoardWhyChooseV3 from "./CustomBoardWhyChooseV3";
 import CustomBoardFeatureV2 from "./CustomBoardFeatureV2";
 
@@ -17,7 +17,7 @@ const GMHBoardContent = () => {
       </div>
 
       {/* Team Section */}
-      <TeamV2 />
+      <TeamV3GraphQL />
 
       {/* Why Choose V3 Section */}
       <CustomBoardWhyChooseV3 />

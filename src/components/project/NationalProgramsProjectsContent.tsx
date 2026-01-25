@@ -1,5 +1,5 @@
 "use client";
-import GalleryV2 from "@/components/gallery/GalleryV2";
+import GalleryV2GraphQL from "@/components/gallery/GalleryV2GraphQL";
 import NationalProgramsService from "./NationalProgramsService";
 import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
 
@@ -8,7 +8,7 @@ const NationalProgramsProjectsContent = () => {
   return (
     <>
       {/* Projects Gallery Section */}
-      <GalleryV2 />
+      <GalleryV2GraphQL />
 
       {/* Services Section */}
       <NationalProgramsService />

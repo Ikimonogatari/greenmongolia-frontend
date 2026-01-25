@@ -1,7 +1,7 @@
 "use client";
 import BreadCrumbWrapper from "@/components/breadCrumb/BreadCrumbWrapper";
 import LayoutV1 from "@/components/layouts/LayoutV1";
-import Partner from "@/components/partner/Partner";
+import PartnerGraphQL from "@/components/partner/PartnerGraphQL";
 import PrivatePartnersContent from "@/components/partner/PrivatePartnersContent";
 
 export default function PrivatePartnersPage() {
@@ -9,7 +9,7 @@ export default function PrivatePartnersPage() {
         <>
             <LayoutV1>
                 <BreadCrumbWrapper titleKey="privatePartners" breadCrumbKey="partners / privatePartners" />
-                <Partner />
+                <PartnerGraphQL />
                 <PrivatePartnersContent />
             </LayoutV1>
         </>

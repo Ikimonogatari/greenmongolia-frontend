@@ -1,5 +1,5 @@
 "use client";
-import GalleryV1 from "@/components/gallery/GalleryV1";
+import GalleryV1GraphQL from "@/components/gallery/GalleryV1GraphQL";
 import UNProgramsFeatures from "./UNProgramsFeatures";
 import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
 
@@ -8,7 +8,7 @@ const UNProgramsProjectsContent = () => {
   return (
     <>
       {/* Projects Gallery Section */}
-      <GalleryV1 />
+      <GalleryV1GraphQL />
 
       {/* Features Section */}
       <UNProgramsFeatures />

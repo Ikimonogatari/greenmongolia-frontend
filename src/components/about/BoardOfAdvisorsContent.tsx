@@ -1,6 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
-import TeamV3 from "@/components/team/TeamV3";
+import TeamV3GraphQL from "@/components/team/TeamV3GraphQL";
 import CustomBoardAdvisorsFeatures from "./CustomBoardAdvisorsFeatures";
 import CustomBoardAdvisorsWhyChoose from "./CustomBoardAdvisorsWhyChoose";
 
@@ -17,7 +17,7 @@ const BoardOfAdvisorsContent = () => {
       </div>
 
       {/* Team Section */}
-      <TeamV3 />
+      <TeamV3GraphQL />
 
       {/* Features Section */}
       <CustomBoardAdvisorsFeatures />

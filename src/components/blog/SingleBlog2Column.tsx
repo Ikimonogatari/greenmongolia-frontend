@@ -17,12 +17,31 @@ interface DataType {
 const SingleBlog2Column = ({ blog }: { blog: DataType }) => {
     const { id, thumb, title, author, comments, date } = blog
 
+    // Handle both full URLs and relative paths
+    const getImageSrc = (imagePath?: string) => {
+        if (!imagePath) return "/assets/img/blog/6.jpg";
+        if (imagePath.startsWith('http') || imagePath.startsWith('/')) {
+            return imagePath;
+        }
+        return `/assets/img/blog/${imagePath}`;
+    };
+
+    const imageSrc = getImageSrc(thumb);
+    const isDirectusUrl = imageSrc.startsWith('http');
+
     return (
         <>
             <div className="blog-style-one">
                 <div className="thumb">
                     <Link href={`/blog-single-with-sidebar/${id}`}>
-                        <Image src={`/assets/img/blog/${thumb}`} alt={title} width={800} height={600} />
+                        <Image 
+                            src={imageSrc} 
+                            alt={title} 
+                            width={800} 
+                            height={600}
+                            unoptimized={isDirectusUrl}
+                            style={{ objectFit: 'cover' }}
+                        />
                     </Link>
                     <div className="date"><strong>{date.day}</strong> <span>{date.month}, {date.year}</span></div>
                 </div>

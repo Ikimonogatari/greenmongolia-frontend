@@ -3,7 +3,6 @@ import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
 import { useTranslations } from "next-intl";
 import CustomUNPartnersRecognition from "./CustomUNPartnersRecognition";
 import CustomUNPartnersService from "./CustomUNPartnersService";
-import Partner from "./Partner";
 
 const UNPartnersContent = () => {
   const t = useTranslations("UNPartners");
@@ -22,9 +21,6 @@ const UNPartnersContent = () => {
 
       {/* Recognition Features Section */}
       <CustomUNPartnersRecognition />
-
-      {/* Partner Logos */}
-      <Partner />
 
       {/* Why Choose Section */}
       <WhyChooseV1 sectionClass="default-padding" />
