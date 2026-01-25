@@ -1,10 +1,10 @@
 "use client";
-import { useGetProjectsQuery, getDirectusImageUrl, getTranslation } from "@/store/api/directusApi";
+import { getDirectusImageUrl, getTranslation, useGetProjectsQuery } from "@/store/api/directusApi";
 import { useLocale, useTranslations } from "next-intl";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Keyboard, Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import Image from "next/image";
 import Link from "next/link";
+import { Autoplay, Keyboard, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const GalleryV1GraphQL = () => {
     const t = useTranslations("Home");
@@ -88,8 +88,9 @@ const GalleryV1GraphQL = () => {
                             disableOnInteraction: false,
                         }}
                         pagination={{
+                            el: '.project-pagination',
                             clickable: true,
-                            dynamicBullets: false,
+                            type: 'bullets',
                         }}
                         breakpoints={{
                             991: {
@@ -156,6 +157,8 @@ const GalleryV1GraphQL = () => {
                             );
                         })}
                     </Swiper>
+                    {/* Explicit Pagination Container */}
+                    <div className="project-pagination text-center mt-30"></div>
                 </div>
             </div>
         </div>

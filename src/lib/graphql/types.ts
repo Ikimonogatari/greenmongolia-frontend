@@ -116,6 +116,7 @@ export interface Event {
 // ============================================
 export interface HomeSliderTranslation extends Translation {
   title?: string;
+  slogan?: string;
 }
 
 export interface HomeSlider {

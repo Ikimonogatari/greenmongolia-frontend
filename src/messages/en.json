@@ -105,6 +105,35 @@
     "description": "Green Mongolia Hub NGO was established in 2024 as a legally registered civil society organization under the laws of Mongolia. The organization is accredited to the United Nations Convention to Combat Desertification (UNCCD) and is a member of both the WOCAT Global SLM Network and the Drynet Network for Land Degradation Neutrality (LDN). The organization works at the intersection of science, community empowerment, and policy advocacy, focusing on sustainable land management, rangeland restoration, climate resilience, and youth engagement.",
     "button": "Learn More"
   },
+  "Home-Benefits": {
+    "title": "Sustainable Land Management in Action",
+    "description": "Green Mongolia Hub implements evidence-based sustainable land management practices across Mongolia, working directly with herders, local communities, and stakeholders to restore degraded lands and build climate resilience.",
+    "benefit1": "UNCCD Accredited Organization",
+    "benefit2": "WOCAT Network Member",
+    "benefit3": "Community-Based Approach"
+  },
+  "Home-WhyChoose": {
+    "achievement1": {
+      "title": "UNCCD Accredited",
+      "description": "Accredited to the United Nations Convention to Combat Desertification, enabling participation in global policy processes."
+    },
+    "achievement2": {
+      "title": "WOCAT Member",
+      "description": "Member of the WOCAT Global Sustainable Land Management Network, providing access to over 2,400 SLM practices."
+    },
+    "achievement3": {
+      "title": "Drynet Member",
+      "description": "Member of the Drynet Network for Land Degradation Neutrality, promoting best practices in land restoration."
+    },
+    "progress1": {
+      "title": "International Recognition",
+      "percentage": 100
+    },
+    "progress2": {
+      "title": "Community Impact",
+      "percentage": 85
+    }
+  },
   "About-About": {
     "title": "About GMH",
     "description": "Green Mongolia Hub integrates scientific knowledge, international networks, and local experience to address Mongolia's land degradation challenges through socially, environmentally, and economically interconnected solutions.",

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import RatingsStar from "../utilities/RatingsStar";
 
 interface DataType {
     thumb?: string;
@@ -26,9 +25,6 @@ const SingleTestimonialV1 = ({ testimonial }: { testimonial: DataType }) => {
                         <div className="content">
                             <h4>{name}</h4>
                             <span>{designation}</span>
-                        </div>
-                        <div className="rating">
-                            <RatingsStar ratings={ratings} />
                         </div>
                     </div>
                 </div>

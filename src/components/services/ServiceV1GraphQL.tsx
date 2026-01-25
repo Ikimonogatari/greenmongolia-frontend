@@ -1,5 +1,5 @@
 "use client";
-import { useGetActivitiesQuery, getDirectusImageUrl, getTranslation } from "@/store/api/directusApi";
+import { getDirectusImageUrl, getTranslation, useGetActivitiesQuery } from "@/store/api/directusApi";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -24,19 +24,19 @@ const ServiceV1GraphQL = ({ hasTitle }: DataType) => {
     const staticServices = [
         {
             id: 1,
-            image: "1.png",
+            image: "slm-practices.png",
             title: t("service1.title"),
             description: t("service1.description")
         },
         {
             id: 2,
-            image: "2.png",
+            image: "capacity-building.png",
             title: t("service2.title"),
             description: t("service2.description")
         },
         {
             id: 3,
-            image: "3.png",
+            image: "cooperation.png",
             title: t("service3.title"),
             description: t("service3.description")
         }

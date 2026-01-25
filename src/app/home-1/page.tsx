@@ -5,13 +5,12 @@ import ContactV1 from "@/components/contact/ContactV1";
 import GalleryV1GraphQL from "@/components/gallery/GalleryV1GraphQL";
 import LayoutV1 from "@/components/layouts/LayoutV1";
 import NewsSection from "@/components/news/NewsSection";
-import ProductCategory from "@/components/products/ProductCategory";
 import ServiceV1GraphQL from "@/components/services/ServiceV1GraphQL";
 import TestimonialV1 from "@/components/testimonials/TestimonialV1";
 import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
 
 export const metadata = {
-  title: "Green Mongolia Hub - Home",
+  title: "Green Mongolia Hub NGO | UNCCD",
 };
 
 const Home1 = () => {
@@ -22,7 +21,6 @@ const Home1 = () => {
         <AboutV1 />
         <ServiceV1GraphQL hasTitle={true} />
         <BenefitsV1 />
-        <ProductCategory />
         <TestimonialV1 />
         <GalleryV1GraphQL />
         <WhyChooseV1 sectionClass="default-padding-bottom" />

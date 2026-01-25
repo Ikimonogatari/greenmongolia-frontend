@@ -284,6 +284,7 @@ export const GET_HOME_SLIDERS_QUERY = gql`
       translations {
         id
         title
+        slogan
         languages_code {
           code
           name

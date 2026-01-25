@@ -36,8 +36,8 @@ const AboutV1 = () => {
                 <Image
                   src="/assets/img/about/1.jpg"
                   alt="Image Not Found"
-                  width={615}
-                  height={852}
+                  width={305}
+                  height={420}
                 />
                 <div className="animation-shape">
                   <Image

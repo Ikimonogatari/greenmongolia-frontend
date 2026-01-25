@@ -1,9 +1,8 @@
 "use client";
-import { useGetHomeSlidersQuery, getDirectusImageUrl, getTranslation } from "@/store/api/directusApi";
+import { getDirectusImageUrl, getTranslation, useGetHomeSlidersQuery } from "@/store/api/directusApi";
 import { useLocale } from "next-intl";
+import { Autoplay, EffectFade, Keyboard, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Keyboard, Pagination, Navigation, Autoplay, EffectFade } from 'swiper/modules';
-import Image from "next/image";
 
 const BannerV3GraphQL = () => {
     const locale = useLocale();
@@ -91,6 +90,11 @@ const BannerV3GraphQL = () => {
                                                     <h2 className="title" data-animation="fadeInUp" data-delay="0.5s">
                                                         {translation.title}
                                                     </h2>
+                                                )}
+                                                {translation?.slogan && (
+                                                    <p className="description" data-animation="fadeInUp" data-delay="0.7s">
+                                                        {translation.slogan}
+                                                    </p>
                                                 )}
                                             </div>
                                         </div>

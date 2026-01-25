@@ -24,24 +24,38 @@ const FooterRecentPost = ({ blog }: { blog: DataType }) => {
     return (
         <>
             <li>
-                <div className="thumb">
-                    <Link href={`/blog-single-with-sidebar/${id}`}>
+                <div className="thumb" style={{ width: '80px', height: '80px', flexShrink: 0 }}>
+                    <Link href={`/blog-single-with-sidebar/${id}`} style={{ display: 'block', width: '100%', height: '100%' }}>
                         <Image 
                             src={imageSrc} 
                             alt={title || "Article"} 
-                            width={400} 
-                            height={400} 
-                            className="h-auto"
+                            width={80} 
+                            height={80} 
+                            style={{ 
+                                objectFit: 'cover', 
+                                width: '100%', 
+                                height: '100%',
+                                borderRadius: '5px'
+                            }}
                             unoptimized={isDirectusUrl}
                         />
                     </Link>
                 </div>
-                <div className="info">
+                <div className="info" style={{ paddingLeft: '15px' }}>
                     <div className="meta-title">
-                        <span className="post-date">{full_date}</span>
+                        <span className="post-date" style={{ fontSize: '12px', color: '#ffb606' }}>{full_date}</span>
                     </div>
-                    <h5>
-                        <Link href={`/blog-single-with-sidebar/${id}`}>
+                    <h5 style={{ 
+                        margin: 0, 
+                        fontSize: '14px', 
+                        lineHeight: '1.4',
+                        display: '-webkit-box',
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: 'vertical',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis'
+                    }}>
+                        <Link href={`/blog-single-with-sidebar/${id}`} style={{ color: 'inherit' }}>
                             {title}
                         </Link>
                     </h5>
