@@ -543,6 +543,40 @@ export const GET_COUNCIL_MEMBER_BY_ID_QUERY = gql`
 `;
 
 // ============================================
+// TESTIMONIALS QUERIES
+// ============================================
+export const GET_TESTIMONIALS_QUERY = gql`
+  query GetTestimonials {
+    testimonials {
+      id
+      status
+      sort
+      date_created
+      date_updated
+      user_created
+      user_updated
+      image {
+        id
+        filename_download
+        title
+        width
+        height
+      }
+      translations {
+        id
+        name
+        position
+        testimonial
+        languages_code {
+          code
+          name
+        }
+      }
+    }
+  }
+`;
+
+// ============================================
 // CONTACT MUTATION
 // ============================================
 export const CREATE_CONTACT_MUTATION = gql`

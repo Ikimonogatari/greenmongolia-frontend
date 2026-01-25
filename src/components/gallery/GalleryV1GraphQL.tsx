@@ -25,14 +25,14 @@ const GalleryV1GraphQL = () => {
                     <div className="row">
                         <div className="col-lg-6 offset-lg-3">
                             <div className="site-heading text-center">
-                                <h5 className="sub-title">Awesome Gallery</h5>
-                                <h2 className="title">Explore Projects</h2>
+                                <h5 className="sub-title">{t('gallery.subTitle')}</h5>
+                                <h2 className="title">{t('gallery.title')}</h2>
                             </div>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-12 text-center">
-                            <p>Loading gallery...</p>
+                            <p>{t('gallery.loading')}</p>
                         </div>
                     </div>
                 </div>
@@ -47,14 +47,14 @@ const GalleryV1GraphQL = () => {
                     <div className="row">
                         <div className="col-lg-6 offset-lg-3">
                             <div className="site-heading text-center">
-                                <h5 className="sub-title">Awesome Gallery</h5>
-                                <h2 className="title">Explore Projects</h2>
+                                <h5 className="sub-title">{t('gallery.subTitle')}</h5>
+                                <h2 className="title">{t('gallery.title')}</h2>
                             </div>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-12 text-center">
-                            <p>No projects available at the moment.</p>
+                            <p>{t('gallery.noProjects')}</p>
                         </div>
                     </div>
                 </div>
@@ -68,8 +68,8 @@ const GalleryV1GraphQL = () => {
                 <div className="row">
                     <div className="col-lg-6 offset-lg-3">
                         <div className="site-heading text-center">
-                            <h5 className="sub-title">Awesome Gallery</h5>
-                            <h2 className="title">Explore Projects</h2>
+                            <h5 className="sub-title">{t('gallery.subTitle')}</h5>
+                            <h2 className="title">{t('gallery.title')}</h2>
                         </div>
                     </div>
                 </div>

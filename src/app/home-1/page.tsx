@@ -6,7 +6,7 @@ import GalleryV1GraphQL from "@/components/gallery/GalleryV1GraphQL";
 import LayoutV1 from "@/components/layouts/LayoutV1";
 import NewsSection from "@/components/news/NewsSection";
 import ServiceV1GraphQL from "@/components/services/ServiceV1GraphQL";
-import TestimonialV1 from "@/components/testimonials/TestimonialV1";
+import TestimonialV1GraphQL from "@/components/testimonials/TestimonialV1GraphQL";
 import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
 
 export const metadata = {
@@ -21,7 +21,7 @@ const Home1 = () => {
         <AboutV1 />
         <ServiceV1GraphQL hasTitle={true} />
         <BenefitsV1 />
-        <TestimonialV1 />
+        <TestimonialV1GraphQL />
         <GalleryV1GraphQL />
         <WhyChooseV1 sectionClass="default-padding-bottom" />
         <ContactV1 />

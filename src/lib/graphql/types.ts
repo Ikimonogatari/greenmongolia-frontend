@@ -211,6 +211,27 @@ export interface CouncilMember {
 }
 
 // ============================================
+// TESTIMONIALS TYPES
+// ============================================
+export interface TestimonialTranslation extends Translation {
+  name: string;
+  position?: string;
+  testimonial?: string;
+}
+
+export interface Testimonial {
+  id: string;
+  status?: string;
+  sort?: number;
+  date_created?: string;
+  date_updated?: string;
+  user_created?: string;
+  user_updated?: string;
+  image?: DirectusFile;
+  translations: TestimonialTranslation[];
+}
+
+// ============================================
 // CONTACT TYPES
 // ============================================
 export interface Contact {
@@ -292,6 +313,10 @@ export interface CouncilMembersResponse {
 
 export interface CouncilMemberItemResponse {
   council_members_by_id: CouncilMember;
+}
+
+export interface TestimonialsResponse {
+  testimonials: Testimonial[];
 }
 
 export interface ContactResponse {

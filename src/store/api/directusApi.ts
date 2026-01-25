@@ -15,6 +15,7 @@ import {
   GET_PROJECT_BY_ID_QUERY,
   GET_COUNCIL_MEMBERS_QUERY,
   GET_COUNCIL_MEMBER_BY_ID_QUERY,
+  GET_TESTIMONIALS_QUERY,
   CREATE_CONTACT_MUTATION,
 } from "@/lib/graphql/queries";
 import type {
@@ -26,6 +27,7 @@ import type {
   Partner,
   Project,
   CouncilMember,
+  Testimonial,
   Contact,
   ContactFormData,
   NewsResponse,
@@ -42,6 +44,7 @@ import type {
   ProjectItemResponse,
   CouncilMembersResponse,
   CouncilMemberItemResponse,
+  TestimonialsResponse,
   ContactResponse,
 } from "@/lib/graphql/types";
 
@@ -70,6 +73,7 @@ export const directusApi = createApi({
     "Partner",
     "Project",
     "CouncilMember",
+    "Testimonial",
     "Contact",
   ],
   endpoints: (builder) => ({
@@ -210,6 +214,17 @@ export const directusApi = createApi({
     }),
 
     // ============================================
+    // TESTIMONIALS ENDPOINTS
+    // ============================================
+    getTestimonials: builder.query<Testimonial[], void>({
+      query: () => ({
+        query: GET_TESTIMONIALS_QUERY,
+      }),
+      transformResponse: (response: TestimonialsResponse) => response.testimonials,
+      providesTags: ["Testimonial"],
+    }),
+
+    // ============================================
     // CONTACT ENDPOINT
     // ============================================
     createContact: builder.mutation<Contact, ContactFormData>({
@@ -255,6 +270,8 @@ export const {
   // Council Members
   useGetCouncilMembersQuery,
   useGetCouncilMemberByIdQuery,
+  // Testimonials
+  useGetTestimonialsQuery,
   // Contact
   useCreateContactMutation,
 } = directusApi;

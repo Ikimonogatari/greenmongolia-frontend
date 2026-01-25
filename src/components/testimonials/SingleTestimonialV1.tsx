@@ -10,7 +10,7 @@ interface DataType {
 }
 
 const SingleTestimonialV1 = ({ testimonial }: { testimonial: DataType }) => {
-    const { thumb, quoteImage, testimonial: text, name, designation, ratings } = testimonial;
+    const { thumb, quoteImage, testimonial: text, name, designation } = testimonial;
 
     return (
         <>

@@ -1,0 +1,71 @@
+/* Hide YouTube loading spinner and buffering indicators */
+.mb_YTPBar,
+.mb_YTPUrl,
+.mbYTP_wrapper .ytp-spinner,
+.mbYTP_wrapper .ytp-spinner-container,
+.mbYTP_wrapper .loading,
+.mbYTP_wrapper .ytp-chrome-bottom,
+.mbYTP_wrapper .ytp-pause-overlay,
+.ytp-spinner,
+.ytp-spinner-container,
+.ytp-large-play-button,
+.ytp-watermark,
+.ytp-cued-thumbnail-overlay {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Hide all YouTube player UI elements */
+.mbYTP_wrapper iframe {
+  pointer-events: none;
+}
+
+/* Ensure smooth video appearance without loading indicators */
+.mb_YTPlayer {
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Hide the buffering message */
+.mbYTP_wrapper .ytp-buffering {
+  display: none !important;
+}
+
+/* Additional YouTube player controls to hide */
+.ytp-gradient-top,
+.ytp-gradient-bottom,
+.ytp-chrome-top,
+.ytp-show-cards-title,
+.ytp-title,
+.ytp-title-text,
+.ytp-title-channel,
+.ytp-cards-teaser,
+.ytp-endscreen-content {
+  display: none !important;
+}
+
+/* Hide loading animation completely */
+.player {
+  position: relative;
+}
+
+.player::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Ensure video wrapper doesn't show loading states */
+.mbYTP_wrapper {
+  background: transparent !important;
+}
+
+.mbYTP_wrapper > * {
+  background: transparent !important;
+}

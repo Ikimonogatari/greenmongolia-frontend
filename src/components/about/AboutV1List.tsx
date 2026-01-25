@@ -1,13 +1,16 @@
+"use client";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 interface DataType {
     icon?: string;
-    title?: string;
-    description?: string;
+    titleKey?: string;
+    descriptionKey?: string;
 }
 
 const AboutV1List = ({ list }: { list: DataType }) => {
-    const { icon, title, description } = list;
+    const t = useTranslations("Home-About");
+    const { icon, titleKey, descriptionKey } = list;
 
     return (
         <li>
@@ -15,8 +18,8 @@ const AboutV1List = ({ list }: { list: DataType }) => {
                 <Image src={`/assets/img/icon/${icon}`} alt="Image Not Found" className="w-auto" width={256} height={256} />
             </div>
             <div className="info">
-                <h4>{title}</h4>
-                <p>{description}</p>
+                <h4>{titleKey ? t(titleKey) : ""}</h4>
+                <p>{descriptionKey ? t(descriptionKey) : ""}</p>
             </div>
         </li>
     );

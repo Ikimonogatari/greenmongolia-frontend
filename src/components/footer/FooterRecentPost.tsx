@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface DataType {
-    id?: number;
+    id?: string | number;
     title?: string;
     full_date?: string;
     thumb?: string;

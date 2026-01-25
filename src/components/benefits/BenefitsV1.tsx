@@ -1,17 +1,17 @@
 "use client";
 import { useTranslations } from "next-intl";
-import LocalVideoBg from "../videos/LocalVideoBg";
+import VideoBg1 from "../videos/VideoBg1";
 
 const BenefitsV1 = () => {
   const t = useTranslations("Home-Benefits");
-  
+
   return (
     <>
       <div
         className="benifits-area default-padding-top video-bg-live bg-cover mt--50 mt-md-0 mt-xs-0"
         style={{ backgroundImage: "url(/assets/img/banner/16.jpg)" }}
       >
-        <LocalVideoBg videoURL="/assets/video/bgvideo.mp4" />
+        <VideoBg1 videoURL="UASTOWZKSN0" />
         <div
           className="shape-top-center"
           style={{ backgroundImage: "url(/assets/img/shape/10.png)" }}

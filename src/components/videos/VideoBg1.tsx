@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import "./VideoBg1.css";
 
 interface VideoBg1Props {
   videoURL?: string;
@@ -25,9 +26,23 @@ const VideoBg1: React.FC<VideoBg1Props> = ({ videoURL = "w9eRIGTHKJM" }) => {
         loadScript("https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.9/jquery.mb.YTPlayer.min.js", () => {
           if (window.jQuery && playerRef.current) {
             const $player = window.jQuery(playerRef.current);
+            
+            // Hide video initially
+            if (playerRef.current) {
+              playerRef.current.style.opacity = "0";
+            }
+            
             $player.mb_YTPlayer();
+            
+            // Show video when ready and playing
             $player.on("YTPReady", () => {
               console.log("Player is ready!");
+              setTimeout(() => {
+                if (playerRef.current) {
+                  playerRef.current.style.opacity = "1";
+                  playerRef.current.style.transition = "opacity 0.5s ease-in-out";
+                }
+              }, 500);
             });
           }
         });
@@ -66,7 +81,7 @@ const VideoBg1: React.FC<VideoBg1Props> = ({ videoURL = "w9eRIGTHKJM" }) => {
         "mute": true,
         "startAt": 10,
         "opacity": 1,
-        "quality": "default"
+        "quality": "hd720"
       }`}
     />
   );
