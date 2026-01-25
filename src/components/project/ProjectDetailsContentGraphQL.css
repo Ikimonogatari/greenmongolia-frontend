@@ -1,0 +1,141 @@
+/* Project Body Content Styling */
+.project-body-content {
+  margin-top: 20px;
+  line-height: 1.8;
+  color: #666;
+}
+
+.project-body-content h1,
+.project-body-content h2,
+.project-body-content h3,
+.project-body-content h4,
+.project-body-content h5,
+.project-body-content h6 {
+  color: #333;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.project-body-content h1 {
+  font-size: 2rem;
+}
+
+.project-body-content h2 {
+  font-size: 1.75rem;
+}
+
+.project-body-content h3 {
+  font-size: 1.5rem;
+}
+
+.project-body-content h4 {
+  font-size: 1.25rem;
+}
+
+.project-body-content p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.project-body-content ul,
+.project-body-content ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+.project-body-content li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.project-body-content strong {
+  font-weight: 600;
+  color: #333;
+}
+
+.project-body-content em {
+  font-style: italic;
+}
+
+.project-body-content a {
+  color: #52a557;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.project-body-content a:hover {
+  color: #3d8742;
+}
+
+.project-body-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.project-body-content blockquote {
+  border-left: 4px solid #52a557;
+  padding-left: 20px;
+  margin: 20px 0;
+  font-style: italic;
+  color: #555;
+}
+
+.project-body-content code {
+  background-color: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.project-body-content pre {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.project-body-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.project-body-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.project-body-content table th,
+.project-body-content table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.project-body-content table th {
+  background-color: #f8f8f8;
+  font-weight: 600;
+}
+
+/* Project Info Sidebar Styling */
+.project-info li {
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-info li:last-child {
+  border-bottom: none;
+}
+
+.project-info h4 {
+  margin-bottom: 5px;
+  font-size: 14px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

@@ -1,33 +1,33 @@
 import AboutV1 from "@/components/about/AboutV1";
-import BannerV3 from "@/components/banner/BannerV3";
+import BannerV3GraphQL from "@/components/banner/BannerV3GraphQL";
 import BenefitsV1 from "@/components/benefits/BenefitsV1";
-import BlogV1 from "@/components/blog/BlogV1";
 import ContactV1 from "@/components/contact/ContactV1";
-import GalleryV1 from "@/components/gallery/GalleryV1";
+import GalleryV1GraphQL from "@/components/gallery/GalleryV1GraphQL";
 import LayoutV1 from "@/components/layouts/LayoutV1";
+import NewsSection from "@/components/news/NewsSection";
 import ProductCategory from "@/components/products/ProductCategory";
-import ServiceV1 from "@/components/services/ServiceV1";
+import ServiceV1GraphQL from "@/components/services/ServiceV1GraphQL";
 import TestimonialV1 from "@/components/testimonials/TestimonialV1";
 import WhyChooseV1 from "@/components/whyChoose/WhyChooseV1";
 
 export const metadata = {
-  title: "Agrica - Organic Farm Agriculture React NextJs Template",
+  title: "Green Mongolia Hub - Home",
 };
 
 const Home1 = () => {
   return (
     <>
       <LayoutV1>
-        <BannerV3 />
+        <BannerV3GraphQL />
         <AboutV1 />
-        <ServiceV1 hasTitle={true} />
+        <ServiceV1GraphQL hasTitle={true} />
         <BenefitsV1 />
         <ProductCategory />
         <TestimonialV1 />
-        <GalleryV1 />
+        <GalleryV1GraphQL />
         <WhyChooseV1 sectionClass="default-padding-bottom" />
         <ContactV1 />
-        <BlogV1 />
+        <NewsSection />
       </LayoutV1>
     </>
   );

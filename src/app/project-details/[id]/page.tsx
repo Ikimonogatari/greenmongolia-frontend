@@ -1,10 +1,8 @@
-import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
 import LayoutV1 from "@/components/layouts/LayoutV1";
-import ProjectDetailsContent from "@/components/project/ProjectDetailsContent";
-import GalleryV2Data from '@/assets/jsonData/gallery/GalleryV2Data.json';
+import ProjectDetailsPageWrapper from "@/components/project/ProjectDetailsPageWrapper";
 
 export const metadata = {
-    title: "Agrica - Project Details"
+    title: "Green Mongolia Hub - Project Details"
 };
 
 interface Params {
@@ -16,15 +14,12 @@ interface PageProps {
 }
 
 const ProjectDetailsPage = async ({ params }: PageProps) => {
-
     const { id } = await params;
-    const data = GalleryV2Data.find(team => team.id === parseInt(id))
 
     return (
         <>
             <LayoutV1>
-                <BreadCrumb title="Organic Healthy Food" breadCrumb="Project-Details" />
-                {data && <ProjectDetailsContent projectInfo={data} />}
+                <ProjectDetailsPageWrapper projectId={id} />
             </LayoutV1>
         </>
     );

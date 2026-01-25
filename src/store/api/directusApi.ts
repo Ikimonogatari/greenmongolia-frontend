@@ -263,7 +263,9 @@ export const {
 export const getDirectusImageUrl = (file?: { id: string; filename_download: string }) => {
   if (!file) return undefined;
   const baseUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL || "https://cms.green-mongolia.com";
-  return `${baseUrl}/assets/${file.id}/${file.filename_download}`;
+  // Encode the filename to handle spaces and special characters
+  const encodedFilename = encodeURIComponent(file.filename_download);
+  return `${baseUrl}/assets/${file.id}/${encodedFilename}`;
 };
 
 // Helper function to get translation by language code

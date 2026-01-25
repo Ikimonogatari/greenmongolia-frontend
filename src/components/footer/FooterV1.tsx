@@ -1,6 +1,6 @@
 "use client";
-import { useGetArticlesQuery } from "@/store/api/articlesApi";
-import { useTranslations } from "next-intl";
+import { useGetNewsQuery, getDirectusImageUrl, getTranslation } from "@/store/api/directusApi";
+import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -14,7 +14,9 @@ interface FormEventHandler {
 
 const FooterV1 = () => {
   const t = useTranslations("Footer");
-  const { data: articlesData, isLoading, error } = useGetArticlesQuery();
+  const locale = useLocale();
+  const languageCode = locale === "mn" ? "mn-MN" : "en-US";
+  const { data: newsData, isLoading, error } = useGetNewsQuery();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const toggleDropdown = (section: string) => {
@@ -28,52 +30,41 @@ const FooterV1 = () => {
     toast.success(t("subscribeSuccess"));
   };
 
-  // Transform articles for footer display (2 most recent)
-  const recentArticles = articlesData?.data
-    ? articlesData.data.slice(0, 2).map((article) => {
-        // Format date
-        const date = article.date_created || article.date_updated;
-        let full_date = "";
-        if (date) {
-          const dateObj = new Date(date);
-          full_date = `${dateObj
-            .getDate()
-            .toString()
-            .padStart(2, "0")} ${dateObj.toLocaleString("en-US", {
-            month: "short",
-          })}, ${dateObj.getFullYear()}`;
-        }
-
-        // Handle image URL - same logic as transformArticleToBlog
-        let thumb = article.thumb;
-        if (article.image) {
-          if (typeof article.image === "string") {
-            thumb = article.image;
-          } else if (
-            article.image &&
-            typeof article.image === "object" &&
-            article.image.filename_download
-          ) {
-            // If it's a Directus file object, construct the URL
-            const directusUrl =
-              process.env.NEXT_PUBLIC_DIRECTUS_URL || "http://localhost:8055";
-            // Ensure proper URL format for Directus assets
-            if (article.image.id && article.image.filename_download) {
-              thumb = `${directusUrl}/assets/${article.image.id}/${article.image.filename_download}`;
-            } else if (article.image.filename_download) {
-              // Fallback if id is missing
-              thumb = `${directusUrl}/assets/${article.image.filename_download}`;
-            }
+  // Transform news for footer display (2 most recent)
+  const recentArticles = newsData
+    ? newsData
+        .filter((item) => item.status === "published")
+        .sort((a, b) => {
+          const dateA = new Date(a.date_created || 0).getTime();
+          const dateB = new Date(b.date_created || 0).getTime();
+          return dateB - dateA;
+        })
+        .slice(0, 2)
+        .map((article) => {
+          const translation = getTranslation(article.translations, languageCode);
+          
+          // Format date
+          let full_date = "";
+          if (article.date_created) {
+            const dateObj = new Date(article.date_created);
+            full_date = `${dateObj
+              .getDate()
+              .toString()
+              .padStart(2, "0")} ${dateObj.toLocaleString(locale, {
+              month: "short",
+            })}, ${dateObj.getFullYear()}`;
           }
-        }
 
-        return {
-          id: article.id,
-          title: article.title,
-          full_date: full_date,
-          thumb: thumb || "/assets/img/blog/default-thumb.jpg",
-        };
-      })
+          // Get image URL using helper
+          const imageUrl = getDirectusImageUrl(article.image || article.cover_image);
+
+          return {
+            id: article.id,
+            title: translation?.title || "Untitled",
+            full_date: full_date,
+            thumb: imageUrl || "/assets/img/blog/default-thumb.jpg",
+          };
+        })
     : [];
 
   return (

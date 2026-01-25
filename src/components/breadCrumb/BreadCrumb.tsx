@@ -6,9 +6,11 @@ import { FaHome } from "react-icons/fa";
 interface DataType {
   title?: string;
   breadCrumb?: string;
+  backgroundImage?: string;
+  skipTitleTranslation?: boolean;
 }
 
-const BreadCrumb = ({ title, breadCrumb }: DataType) => {
+const BreadCrumb = ({ title, breadCrumb, backgroundImage, skipTitleTranslation = false }: DataType) => {
   const t = useTranslations("Breadcrumb");
 
   // Format breadcrumb with slashes if needed
@@ -32,20 +34,24 @@ const BreadCrumb = ({ title, breadCrumb }: DataType) => {
   };
 
   const translatedTitle = title
-    ? (() => {
+    ? (skipTitleTranslation ? title : (() => {
         try {
           return t(title as Parameters<typeof t>[0]) || title;
         } catch {
           return title;
         }
-      })()
+      })())
     : t("errorPage");
 
   return (
     <>
       <div
         className="breadcrumb-area text-center shadow dark-hard bg-cover text-light"
-        style={{ backgroundImage: "url(/assets/img/banner/15.jpg)" }}
+        style={{ 
+          backgroundImage: backgroundImage 
+            ? `url(${backgroundImage})` 
+            : "url(/assets/img/banner/15.jpg)" 
+        }}
       >
         <div className="container">
           <div className="row">

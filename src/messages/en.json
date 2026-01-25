@@ -78,6 +78,7 @@
       "subTitle": "Latest News",
       "title": "Stay Updated with Our Latest News & Updates",
       "continueReading": "Continue Reading",
+      "viewAll": "View All News",
       "loading": "Loading articles...",
       "error": "Error loading articles",
       "noPosts": "No articles available at the moment"
